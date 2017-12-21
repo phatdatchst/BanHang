@@ -262,3 +262,25 @@
 				</div>
 			</section>			
 @endsection
+@section('script')
+	<script src="themes/js/common.js"></script>
+		<script>
+			$(function () {
+				$('#myTab a:first').tab('show');
+				$('#myTab a').click(function (e) {
+					e.preventDefault();
+					$(this).tab('show');
+				})
+			})
+			$(document).ready(function() {
+				$('.thumbnail').fancybox({
+					openEffect  : 'none',
+					closeEffect : 'none'
+				});
+				
+				$('#myCarousel-2').carousel({
+                    interval: 2500
+                });								
+			});
+		</script>
+@endsection

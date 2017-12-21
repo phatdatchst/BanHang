@@ -87,3 +87,7 @@
 				</div>
 			</section>			
 @endsection
+
+@section('script')
+<script src="themes/js/common.js"></script>	
+@endsection

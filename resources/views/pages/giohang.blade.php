@@ -168,3 +168,13 @@
 				</div>
 			</section>	
 			@endsection			
+			@section('script')
+    			<script src="themes/js/common.js"></script>
+        		<script>
+        			$(document).ready(function() {
+        				$('#checkout').click(function (e) {
+        					document.location.href = "checkout.html";
+        				})
+        			});
+        		</script>	
+			@endsection

@@ -36,3 +36,6 @@ Route::get('gioithieu', function (){
 Route::get('chitietsanpham', function (){
     return view('pages.chitietsanpham');
 });
+Route::get('dangki', function (){
+    return view('pages.dangki');
+});

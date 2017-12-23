@@ -17,7 +17,8 @@ class DanhMucController extends Controller
         $this->validate($request, [
             'tennhom' => 'required|min:5|max:100'
         ],
-            [
+            
+        [
             'tennhom.required' => 'Bạn Chưa Nhập Tên Danh Mục',
             'tennhom.min' => 'Tên Thể Loại Quá Ngắn',
             'tennhom.max' => 'Tên Thể Loại Quá Dài',

@@ -1,3 +1,8 @@
 eclipse.preferences.version=1
+<<<<<<< HEAD
 encoding//resources/views/admin/nhacungcap/danhsach.blade.php=UTF-8
 encoding//resources/views/admin/nhacungcap/them.blade.php=UTF-8
+=======
+encoding//resources/views/admin/danhmucsanpham/danhsach.blade.php=UTF-8
+encoding/<project>=UTF-8
+>>>>>>> 9c34850271ef5f797731a571d9bcc8e53017bc13

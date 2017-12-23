@@ -1,11 +1,12 @@
-@extends('admin.layout.index') @section('content')
+@extends('admin.layout.index')
+@section('content')
 <!-- Page Content -->
 <div id="page-wrapper">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-12">
 				<h1 class="page-header">
-					Tin Tức <small>Thêm</small>
+					Nhà Cung Cấp <small>Thêm</small>
 				</h1>
 			</div>
 			<!-- /.col-lg-12 -->
@@ -18,49 +19,42 @@
 						@endforeach
 					</div>
 				@endif
-				<form action="admin/tintuc/them" method="POST" enctype="multipart/form-data">
+				<form action="" method="POST" enctype="multipart/form-data">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					<div class="form-group">
-						<label>Thể Loại</label> <select class="form-control"
-							name="TheLoai" id="TheLoai"> @foreach($theloai as $tl)
-							<option value="{{$tl->id}}">{{$tl->Ten}}</option> @endforeach
+						<label>Nhà Cung Cấp</label> <select class="form-control"
+							name="TheLoai" id="TheLoai">
+							 @foreach($nhacungcap as $ncc)
+							<option value="{{$ncc->id}}">{{$ncc->id}}</option>
+							<option value="{{$ncc->tenncc}}">{{$ncc->tenncc}}</option>
+							<option value="{{$ncc->quocgia}}">{{$ncc->quocgia}}</option>
+							<option value="{{$ncc->sdt}}">{{$ncc->sdt}}</option>
+							<option value="{{$ncc->diachi}}">{{$ncc->diachi}}</option>
+							 @endforeach
 						</select>
-					</div>
-					<div class="form-group">
-						<label>Loại Tin</label> <select class="form-control"
-							name="LoaiTin" id="LoaiTin"> @foreach($loaitin as $lt)
-							<option value="{{$lt->id}}">{{$lt->Ten}}</option> @endforeach
-						</select>
-					</div>
-					<div class="form-group">
-						<label>Tiêu Đề</label> <input class="form-control" name="TieuDe"
-							placeholder="Nhập Tiêu Đề" />
 					</div>
 					
 					<div class="form-group">
-						<label>Tóm Tắt</label>
+						<label>Tên Nhà Cung Cấp</label> <input class="form-control" name="tenncc"
+							placeholder="Nhập tên nhà cung cấp»�" />
+					</div>
+					
+					<div class="form-group">
+						<label>Quốc Gia</label>
 						<textarea name="TomTat" id="demo" class="form-control ckeditor" rows="5"></textarea>
 					</div>
 					<div class="form-group">
-						<label>Nội Dung</label>
+						<label>Số Điện Thoại</label>
 						<textarea name="NoiDung" id="demo" class="form-control ckeditor" rows="5"></textarea>
 					</div>
 					<div class="form-group">
-						<label>Hình Ảnh</label>
+						<label>Địa Chỉ</label>
 						<input type="file" class="form-control" name="Hinh" />
 					</div>
-					<div class="form-group">
-						<label>Nổi Bật</label>
-						<label class="radio-inline">
-					    <input name="NoiBat" value="0" checked="" type="radio">Không Nổi Bật
-						</label>
-						<label class="radio-inline">
-						<input name="NoiBat" value="1" type="radio">Nổi Bật
-						</label>
-					</div>
+					
 					<button type="submit" class="btn btn-default">Thêm</button>
-					<button type="reset" class="btn btn-default">Làm Mới</button>
-					<form>
+					<button type="reset" class="btn btn-default">Làm mới</button>
+					</form>
 			
 			</div>
 		</div>
@@ -71,8 +65,8 @@
 @endsection @section('script')
 <script type="text/javascript">
 		$(document).ready(function(){
-				$('#TheLoai').change(function(){
-					var idTheLoai = $(this).val();
+				$('#NhaCungCap').change(function(){
+					var mancc = $(this).val();
 					$.get("admin/ajax/loaitin/" + idTheLoai,function(data){
 						$('#LoaiTin').html(data);
 					});

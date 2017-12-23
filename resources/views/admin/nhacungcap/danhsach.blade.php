@@ -1,11 +1,12 @@
-@extends('admin.layout.index') @section('content')
+@extends('admin.layout.index')
+@section('content')
 <!-- Page Content -->
 <div id="page-wrapper">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-12">
 				<h1 class="page-header">
-					Tin Tức <small>Danh Sách</small>
+					Nhà Cung Cấp <small>Danh Sách</small>
 				</h1>
 			</div>
 			<!-- /.col-lg-12 -->
@@ -19,37 +20,24 @@
 				<thead>
 					<tr align="center">
 						<th>ID</th>
-						<th>Tiêu Đề</th>
-						<th>Tóm Tắt</th>
-						<th>Thể Loại</th>
-						<th>Loại Tin</th>
-						<th>Số Lần Xem</th>
-						<th>Tin Nổi Bật</th>
+						<th>Tên NCC</th>
+						<th>Quốc Gia</th>
+						<th>Số Điện Thoại</th>
+						<th>Địa Chỉ</th>
 						<th>Delete</th>
 						<th>Edit</th>
 					</tr>
 				</thead>
 				<tbody>
-					@foreach($tintuc as $tt)
+					@foreach($nhacungcap as $ncc)
 					<tr class="odd gradeX" align="center">
-						<td>{{$tt->id}}</td>
-						<td>
-						  <p>{{$tt->TieuDe}}</p>
-						  <img width="100px" alt="" src="uploads/tintuc/{{$tt->Hinh}}"/>
-						</td>
-						<td>{{$tt->TomTat}}</td>
-						<td>{{$tt->loaitin->theloai->Ten}}</td>
-						<td>{{$tt->loaitin->Ten}}</td>
-						<td>{{$tt->SoLuotXem}}</td>
-						<td>
-						   @if($tt->NoiBat == 0)
-						   		{{"Không"}}
-						   	@else 
-						   	    {{"Có"}}
-						   @endif
-						 </td>
-						<td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/tintuc/xoa/{{$tt->id}}">Delete</a></td>
-						<td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/tintuc/sua/{{$tt->id}}">Edit</a></td>
+						<td>{{$ncc->id}}</td>			
+						<td>{{$ncc->tenncc}}</td>
+						<td>{{$ncc->quocgia}}</td>
+						<td>{{$ncc->sdt}}</td>
+						<td>{{$ncc->diachi}}</td>
+						<td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/nhacungcap/xoa/{{$ncc->id}}">Delete</a></td>
+						<td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/nhacungcap/sua/{{$ncc->id}}">Edit</a></td>
 					</tr>
 					@endforeach
 				</tbody>

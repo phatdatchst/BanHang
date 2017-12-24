@@ -11,5 +11,4 @@ class NhaCungCap extends Model
     public function sanpham() {
         return $this->hasMany('App\SanPham','mancc','id');
     }
-
 }

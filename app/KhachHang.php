@@ -6,9 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class KhachHang extends Model
 {
-<<<<<<< HEAD
-    //
-=======
     protected $table = "khachang";
     
     public function hoadon(){
@@ -17,5 +14,4 @@ class KhachHang extends Model
     public function thanhvien(){
         return $this->hasOne('App\ThanhVien','makh','id');
     }
->>>>>>> 9c34850271ef5f797731a571d9bcc8e53017bc13
 }

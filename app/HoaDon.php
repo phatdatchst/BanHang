@@ -6,9 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class HoaDon extends Model
 {
-<<<<<<< HEAD
-    //
-=======
+
     protected $table = "hoadon";
     
     public function cthd(){
@@ -22,5 +20,4 @@ class HoaDon extends Model
     public function nhanvien(){
         return $this->belongsTo('App\NhanVien','manv','id');
     }
->>>>>>> 9c34850271ef5f797731a571d9bcc8e53017bc13
 }

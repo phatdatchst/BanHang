@@ -19,37 +19,39 @@
 				<thead>
 					<tr align="center">
 						<th>ID</th>
-						<th>Tiêu Đề</th>
-						<th>Tóm Tắt</th>
-						<th>Thể Loại</th>
-						<th>Loại Tin</th>
-						<th>Số Lần Xem</th>
-						<th>Tin Nổi Bật</th>
+						<th>Tên Sản Phẩm</th>
+						<th>Chi Tiết</th>
+						<th>Giá Nhập</th>
+						<th>Giá Bán</th>
+						<th>Số Lượng</th>
+						<th>Hình Ảnh</th>
+						<th>Trạng Thái</th>
+						<th>Ngày Nhập</th>
+						<th>Mã Nhóm Sản Phẩm</th>
+						<th>Mã Nhà Cung Cấp</th>
 						<th>Delete</th>
 						<th>Edit</th>
 					</tr>
 				</thead>
 				<tbody>
-					@foreach($tintuc as $tt)
+					@foreach($sanpham as $sp)
 					<tr class="odd gradeX" align="center">
-						<td>{{$tt->id}}</td>
+						<td>{{$sp->id}}</td>
+						<td>{{$sp->tensp}}</td>
+						<td>{{$sp->chitiet}}</td>
+						<td>{{$sp->gianhap}}</td>
+						<td>{{$sp->giaban}}</td>
+						<td>{{$sp->soluong}}</td>
 						<td>
-						  <p>{{$tt->TieuDe}}</p>
-						  <img width="100px" alt="" src="uploads/tintuc/{{$tt->Hinh}}"/>
+						  <p>{{$sp->hinhanh}}</p>
+						  <img width="100px" alt="" src="uploads/sanpham/{{$tt->Hinh}}"/>
 						</td>
-						<td>{{$tt->TomTat}}</td>
-						<td>{{$tt->loaitin->theloai->Ten}}</td>
-						<td>{{$tt->loaitin->Ten}}</td>
-						<td>{{$tt->SoLuotXem}}</td>
-						<td>
-						   @if($tt->NoiBat == 0)
-						   		{{"Không"}}
-						   	@else 
-						   	    {{"Có"}}
-						   @endif
-						 </td>
-						<td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/tintuc/xoa/{{$tt->id}}">Delete</a></td>
-						<td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/tintuc/sua/{{$tt->id}}">Edit</a></td>
+						<td>{{$sp->trangthai}}</td>
+						<td>{{$sp->ngaynhap}}</td>
+						<td>{{$sp->manhomsp}}</td>
+						<td>{{$sp->mancc}}</td>		
+						<td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/sanpham/xoa/{{$tt->id}}">Delete</a></td>
+						<td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/sanpham/sua/{{$tt->id}}">Edit</a></td>
 					</tr>
 					@endforeach
 				</tbody>

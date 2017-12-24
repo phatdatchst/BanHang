@@ -19,37 +19,22 @@
 				<thead>
 					<tr align="center">
 						<th>ID</th>
-						<th>Tiêu Đề</th>
-						<th>Tóm Tắt</th>
-						<th>Thể Loại</th>
-						<th>Loại Tin</th>
-						<th>Số Lần Xem</th>
-						<th>Tin Nổi Bật</th>
+						<th>Tên Nhân Viên</th>
+						<th>Email</th>
+						<th>Số Điện Thoại</th>					
 						<th>Delete</th>
 						<th>Edit</th>
 					</tr>
 				</thead>
 				<tbody>
-					@foreach($tintuc as $tt)
+					@foreach($nhanvien as $nv)
 					<tr class="odd gradeX" align="center">
 						<td>{{$tt->id}}</td>
-						<td>
-						  <p>{{$tt->TieuDe}}</p>
-						  <img width="100px" alt="" src="uploads/tintuc/{{$tt->Hinh}}"/>
-						</td>
-						<td>{{$tt->TomTat}}</td>
-						<td>{{$tt->loaitin->theloai->Ten}}</td>
-						<td>{{$tt->loaitin->Ten}}</td>
-						<td>{{$tt->SoLuotXem}}</td>
-						<td>
-						   @if($tt->NoiBat == 0)
-						   		{{"Không"}}
-						   	@else 
-						   	    {{"Có"}}
-						   @endif
-						 </td>
-						<td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/tintuc/xoa/{{$tt->id}}">Delete</a></td>
-						<td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/tintuc/sua/{{$tt->id}}">Edit</a></td>
+						<td>{{$tt->tennv}}</td>
+						<td>{{$tt->email}}</td>
+						<td>{{$tt->sdt}}</td>
+						<td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/nhanvien/xoa/{{$tt->id}}">Delete</a></td>
+						<td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/nhanvien/sua/{{$tt->id}}">Edit</a></td>
 					</tr>
 					@endforeach
 				</tbody>

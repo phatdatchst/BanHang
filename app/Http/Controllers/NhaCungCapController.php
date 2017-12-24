@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-<<<<<<< HEAD
+
 use App\NhaCungCap;
 
 class NhaCungCapController extends Controller
@@ -25,19 +25,33 @@ class NhaCungCapController extends Controller
         return view('admin.nhacungcap.them');
     }
     public function postThem(Request $request){
-        echo $request->tenncc;
-=======
-
-class NhaCungCapController extends Controller
-{
-    public function getDanhSach(){
+        $this->validate($request, [
+            'tenncc' => 'required|min:2|max:50',
+            'quocgia' => 'required|min:2|max:50',
+            'sdt' => 'required|max:12',
+            'diachi' => 'required|min:5|max:100',
+        ],
+            
+        [
+            'tenncc.required' => 'Bạn Chưa Nhập Tên Nhà Cung Cấp',
+            'tenncc.min' => 'Tên Nhà Cung Cấp Quá Ngắn',
+            'tenncctenncc.max' => 'Tên Nhà Cung Cấp Quá Dài',
+            'quocgia.required' => 'Bạn Chưa Nhập Quốc Gia',
+            'quocgia.min' => 'Tên Quốc Gia Quá Ngắn',
+            'quocgia.max' => 'Tên Quốc Gia Quá Dài',
+            'diachi.required' => 'Bạn Chưa Địa chỉ',
+            'diachi.min' => 'Tên Địa chỉ Quá Ngắn',
+            'diachi.max' => 'Tên Địa chỉ Quá Dài',
+            
+        ]);
+        $nhacungcap = new NhaCungCap();
+        $nhacungcap->tenncc = $request->tenncc;
+        $nhacungcap->quocgia = $request->quocgia;
+        $nhacungcap->sdt = $request->sdt;
+        $nhacungcap->diachi = $request->diachi;
+        $nhacungcap->save();
         
-    }
-    public function getThem(){
-    
-    }
-    public function getSua(){
-    
->>>>>>> 9c34850271ef5f797731a571d9bcc8e53017bc13
+        return redirect('admin/nhacungcap/them')->with('thongbao','Thêm Thành Công');
+
     }
 }

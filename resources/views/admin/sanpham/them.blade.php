@@ -5,7 +5,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<h1 class="page-header">
-					Tin Tức <small>Thêm</small>
+					Sản Phẩm <small>Thêm</small>
 				</h1>
 			</div>
 			<!-- /.col-lg-12 -->
@@ -18,49 +18,53 @@
 						@endforeach
 					</div>
 				@endif
-				<form action="admin/tintuc/them" method="POST" enctype="multipart/form-data">
+				<form action="admin/sanpham/them" method="POST" enctype="multipart/form-data">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
-					<div class="form-group">
-						<label>Thể Loại</label> <select class="form-control"
-							name="TheLoai" id="TheLoai"> @foreach($theloai as $tl)
-							<option value="{{$tl->id}}">{{$tl->Ten}}</option> @endforeach
-						</select>
-					</div>
-					<div class="form-group">
-						<label>Loại Tin</label> <select class="form-control"
-							name="LoaiTin" id="LoaiTin"> @foreach($loaitin as $lt)
-							<option value="{{$lt->id}}">{{$lt->Ten}}</option> @endforeach
-						</select>
-					</div>
-					<div class="form-group">
-						<label>Tiêu Đề</label> <input class="form-control" name="TieuDe"
-							placeholder="Nhập Tiêu Đề" />
-					</div>
 					
 					<div class="form-group">
-						<label>Tóm Tắt</label>
-						<textarea name="TomTat" id="demo" class="form-control ckeditor" rows="5"></textarea>
+						<label>Tên sản phẩm</label> 
+						<input class="form-control" name="TieuDe" placeholder="Nhập Tên sản phẩm" />
 					</div>
 					<div class="form-group">
-						<label>Nội Dung</label>
-						<textarea name="NoiDung" id="demo" class="form-control ckeditor" rows="5"></textarea>
+						<label>Chi tiết</label> 
+						<input class="form-control" name="TieuDe" placeholder="Nhập chi tiết" />
 					</div>
+					<div class="form-group">
+						<label>Giá nhập</label> 
+						<input class="form-control" name="TieuDe" placeholder="Nhập giá nhập" />
+					</div>
+					<div class="form-group">
+						<label>Giá bán</label> 
+						<input class="form-control" name="TieuDe" placeholder="Nhập giá bán" />
+					</div>
+					<div class="form-group">
+						<label>Số Lượng</label> 
+						<input class="form-control" name="TieuDe" type="number" placeholder="Nhập số lượng" />
+					</div>
+					
 					<div class="form-group">
 						<label>Hình Ảnh</label>
 						<input type="file" class="form-control" name="Hinh" />
 					</div>
 					<div class="form-group">
-						<label>Nổi Bật</label>
-						<label class="radio-inline">
-					    <input name="NoiBat" value="0" checked="" type="radio">Không Nổi Bật
-						</label>
-						<label class="radio-inline">
-						<input name="NoiBat" value="1" type="radio">Nổi Bật
-						</label>
+						<label>Trạng thái</label> 
+						<input class="form-control" name="TieuDe" placeholder="Nhập trạng thái" />
+					</div>
+					<div class="form-group">
+						<label>Ngày nhập</label> 
+						<input class="form-control" name="TieuDe" placeholder="Nhập ngày nhập hàng" />
+					</div>
+					<div class="form-group">
+						<label>Mã nhóm sản phẩm</label> 
+						<input class="form-control" name="TieuDe" placeholder="Nhập mã nhóm sản phẩm" />
+					</div>
+					<div class="form-group">
+						<label>Mã nhà cung cấp</label> 
+						<input class="form-control" name="TieuDe" placeholder="Nhập mã nhà cung cấp" />
 					</div>
 					<button type="submit" class="btn btn-default">Thêm</button>
 					<button type="reset" class="btn btn-default">Làm Mới</button>
-					<form>
+					</form>
 			
 			</div>
 		</div>

@@ -15,23 +15,29 @@
 				<thead>
 					<tr align="center">
 						<th>ID</th>
-						<th>Tên Loại Tin</th>
-						<th>Tên Không Dấu</th>
-						<th>Thể Loại</th>
+						<th>Mã khách hàng</th>
+						<th>Tên thành viên</th>
+						<th>Tài khoản</th>
+						<th>Mật khẩu</th>
+						<th>Điểm tích lũy</th>
 						<th>Delete</th>
 						<th>Edit</th>
 					</tr>
 				</thead>
 				<tbody>
+				@foreach($thanhvien as $tv)
 					<tr class="odd gradeX" align="center">
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/loaitin/xoa/{{$lt->id}}">
-								Delete</a></td>
-						<td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/loaitin/sua/{{$lt->id}}">Edit</a></td>
+						<td>{{$tv->id}}</td>
+						<td>{{$tv->makh}}</td>
+						<td>{{$tv->tentv}}</td>
+						<td>{{$tv->taikhoan}}</td>
+						<td>{{$tv->matkhau}}</td>
+						<td>{{$tv->diemtichluy}}</td>
+						
+						<td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/thanhvien/xoa/{{$lt->id}}">Delete</a></td>
+						<td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/thanhvien/sua/{{$lt->id}}">Edit</a></td>
 					</tr>
+					@endforeach
 				</tbody>
 			</table>
 		</div>

@@ -18,49 +18,25 @@
 						@endforeach
 					</div>
 				@endif
-				<form action="admin/tintuc/them" method="POST" enctype="multipart/form-data">
+				<form action="admin/nhanvien/them" method="POST" enctype="multipart/form-data">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
+					
 					<div class="form-group">
-						<label>Thể Loại</label> <select class="form-control"
-							name="TheLoai" id="TheLoai"> @foreach($theloai as $tl)
-							<option value="{{$tl->id}}">{{$tl->Ten}}</option> @endforeach
-						</select>
-					</div>
-					<div class="form-group">
-						<label>Loại Tin</label> <select class="form-control"
-							name="LoaiTin" id="LoaiTin"> @foreach($loaitin as $lt)
-							<option value="{{$lt->id}}">{{$lt->Ten}}</option> @endforeach
-						</select>
-					</div>
-					<div class="form-group">
-						<label>Tiêu Đề</label> <input class="form-control" name="TieuDe"
-							placeholder="Nhập Tiêu Đề" />
+						<label>Tên Nhân Viên</label>
+						 <input class="form-control" name="tennv" placeholder="Nhập Tên Nhân Viên" />
 					</div>
 					
 					<div class="form-group">
-						<label>Tóm Tắt</label>
-						<textarea name="TomTat" id="demo" class="form-control ckeditor" rows="5"></textarea>
+						<label>Email</label>
+						<input class="form-control" name="email" placeholder="Nhập email" />
 					</div>
 					<div class="form-group">
-						<label>Nội Dung</label>
-						<textarea name="NoiDung" id="demo" class="form-control ckeditor" rows="5"></textarea>
-					</div>
-					<div class="form-group">
-						<label>Hình Ảnh</label>
-						<input type="file" class="form-control" name="Hinh" />
-					</div>
-					<div class="form-group">
-						<label>Nổi Bật</label>
-						<label class="radio-inline">
-					    <input name="NoiBat" value="0" checked="" type="radio">Không Nổi Bật
-						</label>
-						<label class="radio-inline">
-						<input name="NoiBat" value="1" type="radio">Nổi Bật
-						</label>
+						<label>Số Điện Thoại</label>
+						<input class="form-control" name="sdt" type="number" placeholder="Nhập số điện thoại" />
 					</div>
 					<button type="submit" class="btn btn-default">Thêm</button>
 					<button type="reset" class="btn btn-default">Làm Mới</button>
-					<form>
+					</form>
 			
 			</div>
 		</div>
@@ -71,8 +47,8 @@
 @endsection @section('script')
 <script type="text/javascript">
 		$(document).ready(function(){
-				$('#TheLoai').change(function(){
-					var idTheLoai = $(this).val();
+				$('#NhanVien').change(function(){
+					var manv = $(this).val();
 					$.get("admin/ajax/loaitin/" + idTheLoai,function(data){
 						$('#LoaiTin').html(data);
 					});

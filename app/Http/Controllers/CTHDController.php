@@ -9,7 +9,7 @@ use App\SanPham;
 class CTHDController extends Controller
 {
     public function getDanhSach(){
-        $cthd = CTHD::all();
+         $cthd = CTHD::all();
         return view('admin.cthd.danhsach',['cthd' => $cthd]);
     }
     public function getThem(){

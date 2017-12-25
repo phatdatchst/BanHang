@@ -18,7 +18,7 @@
 						@endforeach
 					</div>
 				@endif
-				<form action="admin/tintuc/them" method="POST" enctype="multipart/form-data">
+				<form action="admin/thanhvien/them" method="POST" enctype="multipart/form-data">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					
 					<div class="form-group">
@@ -56,8 +56,8 @@
 @endsection @section('script')
 <script type="text/javascript">
 		$(document).ready(function(){
-				$('#TheLoai').change(function(){
-					var idTheLoai = $(this).val();
+				$('#ThanhVien').change(function(){
+					var matv = $(this).val();
 					$.get("admin/ajax/loaitin/" + idTheLoai,function(data){
 						$('#LoaiTin').html(data);
 					});

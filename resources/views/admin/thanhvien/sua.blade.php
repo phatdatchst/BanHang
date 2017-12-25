@@ -13,18 +13,27 @@
 			<div class="col-lg-7" style="padding-bottom: 120px">
 				<form action="admin/loaitin/sua/{{$loaitin->id}}" method="POST">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
+					
 					<div class="form-group">
-						<label>Thể Loại</label>
-						 <select class="form-control" name="TheLoai">
-					    							  	
-							   <option>
-    						  	</option>							    
-						</select>
+						<label>Mã khách hàng</label> 
+						<input class="form-control" name="TieuDe" placeholder="Nhập mã khách hàng" />
 					</div>
 					<div class="form-group">
-						<label>Tên Loại Tin</label>
-						<input class="form-control" name="Ten" placeholder="Nhập Loại Tin" value="{{$loaitin->Ten}}"/>
-					</div>	
+						<label>Tên thành viên</label> 
+						<input class="form-control" name="TieuDe" placeholder="Nhập tên thành viên" />
+					</div>
+					<div class="form-group">
+						<label>Tài khoản</label> 
+						<input class="form-control" name="TieuDe" placeholder="Nhập tài khoản" />
+					</div>
+					<div class="form-group">
+						<label>Mật khẩu</label> 
+						<input class="form-control" name="TieuDe" placeholder="Nhập mật khẩu" />
+					</div>
+					<div class="form-group">
+						<label>Điểm tích lũy</label> 
+						<input class="form-control" name="TieuDe" type="number" placeholder="Nhập điểm" />
+					</div>
 					<button type="submit" class="btn btn-default">Sửa</button>
 					<button type="reset" class="btn btn-default">Làm Mới</button>
 					</form>

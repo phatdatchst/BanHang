@@ -29,6 +29,7 @@ Route::group(['prefix' => 'admin'],function(){
         Route::get('danhsach','SanPhamController@getDanhSach');
         Route::get('sua','SanPhamController@getSua');
         Route::get('them','SanPhamController@getThem');
+        Route::post('them','SanPhamController@postThem');
     });
     Route::group(['prefix' => 'chitiet'],function(){
         Route::get('danhsach','CTHDController@getDanhSach');
@@ -45,23 +46,34 @@ Route::group(['prefix' => 'admin'],function(){
     });
     Route::group(['prefix' => 'khachhang'],function(){
         Route::get('danhsach','KhachHangController@getDanhSach');
-        Route::get('sua','KhachHangController@getSua');
+        Route::get('sua/{id}','KhachHangController@getSua');
+        Route::post('sua/{id}','KhachHangController@postSua');
         Route::get('them','KhachHangController@getThem');
+        Route::post('them','KhachHangController@postThem');
     });
     Route::group(['prefix' => 'nhacungcap'],function(){
         Route::get('danhsach','NhaCungCapController@getDanhSach');
-        Route::get('sua','NhaCungCapController@getSua');
+        Route::get('sua/{id}','NhaCungCapController@getSua');
+        Route::post('sua/{id}','NhaCungCapController@postSua');
         Route::get('them','NhaCungCapController@getThem');
+        Route::post('them','NhaCungCapController@postThem');
+        Route::get('xoa/{id}','NhaCungCapController@getXoa');
     });
     Route::group(['prefix' => 'nhanvien'],function(){
         Route::get('danhsach','NhanVienController@getDanhSach');
-        Route::get('sua','NhanVienController@getSua');
+        Route::get('sua/{id}','NhanVienController@getSua');
+        Route::post('sua/{id}','NhanVienController@postSua');
         Route::get('them','NhanVienController@getThem');
+        Route::post('them','NhanVienController@postThem');
+        Route::get('xoa/{id}','NhanVienController@getXoa');
     });
     Route::group(['prefix' => 'thanhvien'],function(){
         Route::get('danhsach','ThanhVienController@getDanhSach');
-        Route::get('sua','ThanhVienController@getSua');
+        Route::get('sua/{id}','ThanhVienController@getSua');
+        Route::post('sua/{id}','ThanhVienController@postSua');
         Route::get('them','ThanhVienController@getThem');
+        Route::post('them','ThanhVienController@postThem');
+        Route::get('xoa/{id}','ThanhVienController@getXoa');
     });
 });
 

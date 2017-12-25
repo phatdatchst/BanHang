@@ -38,8 +38,26 @@ class NhaCungCapController extends Controller
         $nhacungcap->sdt = $request->sdt;
         $nhacungcap->diachi = $request->diachi;
         $nhacungcap->save();
+        return redirect('admin/nhacungcap/them')->with('thong bao', 'thêm thành công');
     }
-    public function getSua(){
-        return view('admin.nhacungcap.sua');
+    public function getSua($id){
+        $nhacungcap = NhaCungCap::find($id);
+        return view('admin.nhacungcap.sua',['nhacungcap'=>$nhacungcap]);
     }
+    public function postSua(Request $request, $id){
+        $nhacungcap = NhaCungCap::find($id);
+        $nhacungcap->tenncc = $request->tenncc;
+        $nhacungcap->quocgia = $request->quocgia;
+        $nhacungcap->sdt = $request->sdt;
+        $nhacungcap->diachi = $request->diachi;
+        $nhacungcap->save();
+        return redirect('admin/nhacungcap/sua'.$id)->with('thong bao','sửa thành công');
+    }
+    public function getXoa($id){
+        $nhacungcap = NhaCungCap::find($id);
+        $nhacungcap->delete();
+        return redirect('admin/nhacungcap/danhsach')->with('thong bao','xóa thành công');
+    }
+    
+    
 }

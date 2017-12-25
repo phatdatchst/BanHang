@@ -37,7 +37,22 @@ class NhanVienController extends Controller
         
         return redirect('admin/nhanvien/them')->with('thongbao','Thêm Thành Công');
     }
-    public function getSua(){
-        return view('admin.nhanvien.sua');
+    public function getSua($id){
+        $nhanvien = NhanVien::find($id);
+        return view('admin.nhanvien.sua',['nhanvien'=>$nhanvien]);
+    }
+    public function postSua(Request $request, $id){
+        $nhanvien = NhanVien::find($id);
+        $nhanvien->tennv = $request->tennv;
+        $nhanvien->email = $request->email;
+        $nhanvien->sdt = $request->sdt;
+        $nhanvien->save();
+        return redirect('admin/nhanvien/sua'.$id)->with('thong bao', 'Sửa thành công');
+    }
+    public function getXoa($id)
+    {
+        $nhanvien = NhanVien::find($id);
+        $nhanvien->delete();
+        return redirect('admin/nhanvien/danhsach')->with('thong bao','xóa thành công');
     }
 }

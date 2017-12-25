@@ -29,12 +29,12 @@
 				<tbody>
 					@foreach($nhanvien as $nv)
 					<tr class="odd gradeX" align="center">
-						<td>{{$tt->id}}</td>
-						<td>{{$tt->tennv}}</td>
-						<td>{{$tt->email}}</td>
-						<td>{{$tt->sdt}}</td>
-						<td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/nhanvien/xoa/{{$tt->id}}">Delete</a></td>
-						<td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/nhanvien/sua/{{$tt->id}}">Edit</a></td>
+						<td>{{$nv->id}}</td>
+						<td>{{$nv->tennv}}</td>
+						<td>{{$nv->email}}</td>
+						<td>{{$nv->sdt}}</td>
+						<td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/nhanvien/xoa/{{$nv->id}}">Delete</a></td>
+						<td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/nhanvien/sua/{{$nv->id}}">Edit</a></td>
 					</tr>
 					@endforeach
 				</tbody>

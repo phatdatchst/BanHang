@@ -6,7 +6,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<h1 class="page-header">
-					Tin Tức <small>{{$tintuc->TieuDe}}</small>
+					Nhà cung cấp <small>{{$nhacungcap->tenncc}}</small>
 				</h1>
 			</div>
 			<!-- /.col-lg-12 -->
@@ -24,74 +24,29 @@
 						{{session('thongbao')}}
 					</div>
 				@endif
-				<form action="admin/tintuc/sua/{{$tintuc->id}}" method="POST" enctype="multipart/form-data">
+				<form action="admin/nhacungcap/sua/{{$nhacungcap->id}}" method="POST" enctype="multipart/form-data">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
-					<div class="form-group">
-						<label>Thể Loại</label> <select class="form-control"
-							name="TheLoai" id="TheLoai">
-						 @foreach($theloai as $tl)
-							<option
-								@if($tintuc->loaitin->theloai->id == $tl->id)
-									{{ "selected" }}
-								@endif
-							 	value="{{$tl->id}}">{{$tl->Ten}}
-							 </option>
-						 @endforeach
-						</select>
-					</div>
-					<div class="form-group">
-						<label>Loại Tin</label> <select class="form-control"
-							name="LoaiTin" id="LoaiTin">
-						 @foreach($loaitin as $lt)
-							<option
-								@if($tintuc->loaitin->id == $lt->id)
-									{{ "selected" }}
-								@endif
-							 	value="{{$lt->id}}">{{$lt->Ten}}
-							</option>
-						 @endforeach
-						</select>
-					</div>
-					<div class="form-group">
-						<label>Tiêu Đề</label> <input class="form-control" name="TieuDe"
-							placeholder="Nhập Tiêu Đề" value="{{$tintuc->TieuDe}}"/>
+					<<div class="form-group">
+						<label>Tên Nhà Cung Cấp</label> <input class="form-control" name="tenncc"
+							placeholder="Nhập tên nhà cung cấp" value="{{$nhacungcap->tenncc}}"/>
 					</div>
 					
 					<div class="form-group">
-						<label>Tóm Tắt</label>
-						<textarea name="TomTat" id="demo" class="form-control ckeditor" rows="5" >{{$tintuc->TomTat}}</textarea>
+						<label>Quốc Gia</label>
+						<input class="form-control" name="quocgia" placeholder="Nhập tên quốc gia" value="{{$nhacungcap->quocgia}}" />
 					</div>
 					<div class="form-group">
-						<label>Nội Dung</label>
-						<textarea name="NoiDung" id="demo" class="form-control ckeditor" rows="5" >{{$tintuc->NoiDung}}</textarea>
+						<label>Số Điện Thoại</label>
+						<input class="form-control" name="sdt" type="number" placeholder="Nhập số điện thoại" value="{{$nhacungcap->sdt}}" />
 					</div>
 					<div class="form-group">
-						<label>Hình Ảnh</label>
-						<br>
-						<img width="400px" alt="" src="uploads/tintuc/{{$tintuc->Hinh}}">
-						<br>
-						<input type="file" class="form-control" name="Hinh" />
+						<label>Địa Chỉ</label>
+						<input class="form-control" name="diachi" placeholder="Nhập địa chỉ" value="{{$nhacungcap->diachi}}"/>
 					</div>
-					<div class="form-group">
-						<label>Nổi Bật</label>
-						<label class="radio-inline">
-					    <input name="NoiBat" value="0"
-					    	@if($tintuc->NoiBat == 0)
-					    		{{ "checked" }}
-					    	@endif	
-					     type="radio">Không Nổi Bật
-						</label>
-						<label class="radio-inline">
-						<input name="NoiBat" value="1"
-							@if($tintuc->NoiBat == 1)
-					    		{{ "checked" }}
-					    	@endif
-						 type="radio">Nổi Bật
-						</label>
-					</div>
+					
 					<button type="submit" class="btn btn-default">Sửa</button>
 					<button type="reset" class="btn btn-default">Làm Mới</button>
-					<form>
+					</form>
 			
 			</div>
 		</div>

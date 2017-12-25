@@ -41,11 +41,27 @@ class ThanhVienController extends Controller
         $thanhvien->taikhoan = $request->taikhoan;
         $thanhvien->matkhau = $request->matkhau;
         $thanhvien->diemtichluy = $request->diemtichluy;
-        
+        $thanhvien->save();
         return redirect('admin/thanhvien/them')->with('thongbao','Thêm Thành Công');
         
     }
-    public function getSua(){
-        return view('admin.thanhvien.sua');
+    public function getSua($id){
+        $thanhvien = ThanhVien::find($id);
+        return view('admin.thanhvien.sua',['thanhvien'=>$thanhvien]);
+    }
+    public function postSua(Request $request, $id){
+        $thanhvien = ThanhVien::find($id);
+        $thanhvien->makh = $request->makh;
+        $thanhvien->tentv = $request->tentv;
+        $thanhvien->taikhoan = $request->taikhoan;
+        $thanhvien->matkhau = $request->matkhau;
+        $thanhvien->diemtichluy = $request->diemtichluy;
+        $thanhvien->save();
+        return redirect('admin/thanhvien/sua')->with('thong bao', 'Sửa thành công');
+    }
+    public function getXoa($id){
+        $thanhvien = ThanhVien::find($id);
+        $thanhvien->delete();
+        return redirect('admin/thanhvien/danhsach')->with('thongbao','Xóa Thành Công');
     }
 }

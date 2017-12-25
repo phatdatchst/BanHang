@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class KhachHang extends Model
 {
-    protected $table = "khachang";
+    protected $table = "khachhang";
     
     public function hoadon(){
         return $this->hasMany('App\HoaDon','makh','id');

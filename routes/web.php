@@ -27,9 +27,11 @@ Route::group(['prefix' => 'admin'],function(){
     });
     Route::group(['prefix' => 'sanpham'],function(){
         Route::get('danhsach','SanPhamController@getDanhSach');
-        Route::get('sua','SanPhamController@getSua');
+        Route::get('sua/{id}','SanPhamController@getSua');
+        Route::post('sua/{id}','SanPhamController@postSua');
         Route::get('them','SanPhamController@getThem');
         Route::post('them','SanPhamController@postThem');
+        Route::get('xoa/{id}','SanPhamController@getXoa');
     });
     Route::group(['prefix' => 'chitiet'],function(){
         Route::get('danhsach','CTHDController@getDanhSach');
@@ -53,10 +55,9 @@ Route::group(['prefix' => 'admin'],function(){
         Route::post('sua/{id}','KhachHangController@postSua');
         Route::get('them','KhachHangController@getThem');
         Route::post('them','KhachHangController@postThem');
-<<<<<<< HEAD
-=======
+
         Route::get('xoa/{id}','KhachHangController@getXoa');
->>>>>>> ba098b02b9ab146f5279e25662e973a06893b712
+
     });
     Route::group(['prefix' => 'nhacungcap'],function(){
         Route::get('danhsach','NhaCungCapController@getDanhSach');

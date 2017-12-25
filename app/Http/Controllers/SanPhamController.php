@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\SanPham;
+use App\DanhMuc;
+use App\NhaCungCap;
 
 class SanPhamController extends Controller
 {
@@ -12,7 +14,9 @@ class SanPhamController extends Controller
         return view('admin.sanpham.danhsach',['sanpham'=>$sanpham]);
     }
     public function getThem(){
-        return view('admin.sanpham.them');
+        $nhomsp = DanhMuc::all();
+        $nhacungcap = NhaCungCap::all();
+        return view('admin.sanpham.them',['nhomsp' => $nhomsp, 'nhacungcap'=>$nhacungcap]);
     }
      public function postThem(Request $request){
         $this->validate($request, [
@@ -58,7 +62,38 @@ class SanPhamController extends Controller
         
         return redirect('admin/sanpham/them')->with('thongbao','Thêm Thành Công');
      }
-    public function getSua(){
-        return view('admin.sanpham.sua');
+    public function getSua($id){
+        $nhomsp = DanhMuc::all();
+        $nhacungcap = NhaCungCap::all();
+        $sanpham = SanPham::find($id);
+        return view('admin.sanpham.sua',['nhomsp'=>$nhomsp, 'nhacungcap'=>$nhacungcap, 'sanpham'=>$sanpham]);
+    }
+    public function postSua(Request $request, $id){
+        $this->validate($request, [
+           'tensp'=> 'required|unique:sanpham,tensp|min:2|max:50'
+        ],[
+            'tensp.required' => 'Bạn Chưa Nhập Tên Sản Phẩm',
+            'tensp.unique' => 'Tên Sản Phẩm Đã Tồn Tại',
+            'tensp.min' => 'Tên Sản Phẩm Quá Ngắn',
+            'tensp.max' => 'Tên Sản Phẩm Quá Dài',
+        ]);
+        $sanpham = SanPham::find($id);
+        $sanpham->tensp = $request->tensp;
+        $sanpham->chitiet = $request->chitiet;
+        $sanpham->gianhap = $request->gianhap;
+        $sanpham->giaban = $request->giaban;
+        $sanpham->soluong = $request->soluong;
+        $sanpham->hinhanh = $request->hinhanh;
+        $sanpham->trangthai = $request->trangthai;
+        $sanpham->ngaynhap = $request->ngaynhap;
+        $sanpham->manhomsp = $request->manhomsp;
+        $sanpham->mancc = $request->mancc;
+        $sanpham->save();
+        return redirect('admin/sanpham/sua'.$id)->with('thong bao','Sửa thành công');
+    }
+    public function getXoa($id){
+        $sanpham = SanPham::find($id);
+        $sanpham->delete();
+        return redirect('admin/sanpham/danhsach')->with('thong bao','Xóa thành công');
     }
 }

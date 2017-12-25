@@ -45,6 +45,14 @@ class NhaCungCapController extends Controller
         return view('admin.nhacungcap.sua',['nhacungcap'=>$nhacungcap]);
     }
     public function postSua(Request $request, $id){
+        $this->validate($request, [
+            'tenncc'=>'required|unique:nhacungcap, tenncc|min:2|max:50'
+        ],[
+            'tenncc.required' => 'Bạn Chưa Nhập Tên Nhà Cung Cấp',
+            'tenncc.unique' => 'Tên Nhà Cung Cấp Đã Tồn Tại',
+            'tenncc.min' => 'Tên Nhà Cung Cấp Quá Ngắn',
+            'tenncc.max' => 'Tên Nhà Cung Cấp Quá Dài',
+        ]);
         $nhacungcap = NhaCungCap::find($id);
         $nhacungcap->tenncc = $request->tenncc;
         $nhacungcap->quocgia = $request->quocgia;

@@ -50,6 +50,17 @@ class ThanhVienController extends Controller
         return view('admin.thanhvien.sua',['thanhvien'=>$thanhvien]);
     }
     public function postSua(Request $request, $id){
+        $this->validate($request, 
+            [
+                'makh'=>'required|unique:thanhvien,makh|min:2|max:10'
+            ]
+           ,[
+               'makh.required' => 'Bạn Chưa Nhập Mã Khách Hàng',
+               'makh.unique' => 'Mã Khách Hàng Đã Tồn Tại',
+               'makh.min' => 'Mã Khách Hàng Quá Ngắn',
+               'makh.max' => 'Mã Khách Hàng Quá Dài',
+            ]
+            );
         $thanhvien = ThanhVien::find($id);
         $thanhvien->makh = $request->makh;
         $thanhvien->tentv = $request->tentv;

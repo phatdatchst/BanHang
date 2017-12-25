@@ -24,71 +24,63 @@
 						{{session('thongbao')}}
 					</div>
 				@endif
-				<form action="admin/tintuc/sua/{{$tintuc->id}}" method="POST" enctype="multipart/form-data">
+				<form action="admin/sanpham/sua/{{$sanpham->id}}" method="POST" enctype="multipart/form-data">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					<div class="form-group">
-						<label>Thể Loại</label> <select class="form-control"
-							name="TheLoai" id="TheLoai">
-						 @foreach($theloai as $tl)
-							<option
-								@if($tintuc->loaitin->theloai->id == $tl->id)
-									{{ "selected" }}
-								@endif
-							 	value="{{$tl->id}}">{{$tl->Ten}}
-							 </option>
-						 @endforeach
-						</select>
+						<label>Tên sản phẩm</label> 
+						<input class="form-control" name="TieuDe" placeholder="Nhập Tên sản phẩm" value="{{$nhanvien->tensp}}" />
 					</div>
 					<div class="form-group">
-						<label>Loại Tin</label> <select class="form-control"
-							name="LoaiTin" id="LoaiTin">
-						 @foreach($loaitin as $lt)
-							<option
-								@if($tintuc->loaitin->id == $lt->id)
-									{{ "selected" }}
-								@endif
-							 	value="{{$lt->id}}">{{$lt->Ten}}
-							</option>
-						 @endforeach
-						</select>
+						<label>Chi tiết</label> 
+						<input class="form-control" name="TieuDe" placeholder="Nhập chi tiết"value="{{$nhanvien->chitiet}}"  />
 					</div>
 					<div class="form-group">
-						<label>Tiêu Đề</label> <input class="form-control" name="TieuDe"
-							placeholder="Nhập Tiêu Đề" value="{{$tintuc->TieuDe}}"/>
+						<label>Giá nhập</label> 
+						<input class="form-control" name="TieuDe" placeholder="Nhập giá nhập" value="{{$nhanvien->gianhap}}" />
+					</div>
+					<div class="form-group">
+						<label>Giá bán</label> 
+						<input class="form-control" name="TieuDe" placeholder="Nhập giá bán" value="{{$nhanvien->giaban}}"  />
+					</div>
+					<div class="form-group">
+						<label>Số Lượng</label> 
+						<input class="form-control" name="TieuDe" type="number" placeholder="Nhập số lượng"value="{{$nhanvien->soluong}}"  />
 					</div>
 					
 					<div class="form-group">
-						<label>Tóm Tắt</label>
-						<textarea name="TomTat" id="demo" class="form-control ckeditor" rows="5" >{{$tintuc->TomTat}}</textarea>
-					</div>
-					<div class="form-group">
-						<label>Nội Dung</label>
-						<textarea name="NoiDung" id="demo" class="form-control ckeditor" rows="5" >{{$tintuc->NoiDung}}</textarea>
-					</div>
-					<div class="form-group">
 						<label>Hình Ảnh</label>
-						<br>
-						<img width="400px" alt="" src="uploads/tintuc/{{$tintuc->Hinh}}">
-						<br>
-						<input type="file" class="form-control" name="Hinh" />
+						<input type="file" class="form-control" name="Hinh" value="{{$nhanvien->hinhanh}}"  />
 					</div>
 					<div class="form-group">
-						<label>Nổi Bật</label>
-						<label class="radio-inline">
-					    <input name="NoiBat" value="0"
-					    	@if($tintuc->NoiBat == 0)
-					    		{{ "checked" }}
-					    	@endif	
-					     type="radio">Không Nổi Bật
-						</label>
-						<label class="radio-inline">
-						<input name="NoiBat" value="1"
-							@if($tintuc->NoiBat == 1)
-					    		{{ "checked" }}
-					    	@endif
-						 type="radio">Nổi Bật
-						</label>
+						<label>Trạng thái</label> 
+						<input class="form-control" name="trangthai" placeholder="Nhập trạng thái"value="{{$nhanvien->trangthai}}"  />
 					</div>
+					<div class="form-group">
+						<label>Ngày nhập</label> 
+						<input class="form-control" name="ngaynhap" placeholder="Nhập ngày nhập hàng" value="{{$nhanvien->ngaynhap}}" />
+					</div>
+					<label>Nhóm Sản Phẩm</label> <select class="form-control"
+							name="HoaDon" id="TheLoai">
+						 @foreach($nhomsp as $nsp)
+							<option
+								@if($sanpham->manhomsp == $nsp->id)
+									{{ "selected" }}
+								@endif
+							 	value="{{$nsp->id}}">{{$nsp->id}}
+							 </option>
+						 @endforeach
+						</select>
+					<label>Mã Nhà Cung Cấp</label> <select class="form-control"
+							name="HoaDon" id="TheLoai">
+						 @foreach($nhacungcap as $ncc)
+							<option
+								@if($nhacungcap->mancc == $ncc->id)
+									{{ "selected" }}
+								@endif
+							 	value="{{$ncc->id}}">{{$ncc->id}}
+							 </option>
+						 @endforeach
+						</select>
 					<button type="submit" class="btn btn-default">Sửa</button>
 					<button type="reset" class="btn btn-default">Làm Mới</button>
 					<form>

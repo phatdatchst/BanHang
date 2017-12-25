@@ -55,12 +55,18 @@
 						<input class="form-control" name="TieuDe" placeholder="Nhập ngày nhập hàng" />
 					</div>
 					<div class="form-group">
-						<label>Mã nhóm sản phẩm</label> 
-						<input class="form-control" name="TieuDe" placeholder="Nhập mã nhóm sản phẩm" />
+						<label>Mã Nhóm Sản Phẩm</label>
+						 <select class="form-control"
+							name="HoaDon" id="HoaDon"> @foreach($nhomsp as $nsp)
+							<option value="{{$hd->id}}">{{$nsp->id}}</option> @endforeach
+						</select>
 					</div>
 					<div class="form-group">
-						<label>Mã nhà cung cấp</label> 
-						<input class="form-control" name="TieuDe" placeholder="Nhập mã nhà cung cấp" />
+						<label>Mã Nhà Cung Cấp</label>
+						 <select class="form-control"
+							name="HoaDon" id="HoaDon"> @foreach($nhacungcap as $ncc)
+							<option value="{{$hd->id}}">{{$ncc->id}}</option> @endforeach
+						</select>
 					</div>
 					<button type="submit" class="btn btn-default">Thêm</button>
 					<button type="reset" class="btn btn-default">Làm Mới</button>

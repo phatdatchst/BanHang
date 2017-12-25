@@ -18,45 +18,41 @@
 						@endforeach
 					</div>
 				@endif
-				<form action="admin/tintuc/them" method="POST" enctype="multipart/form-data">
+				@if(session('thongbao'))
+    			 	<div class="alert alert-success">
+    					{{ session('thongbao') }}
+    				</div>
+    			 @endif
+				<form action="admin/hoadon/them" method="POST">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					<div class="form-group">
-						<label>Thể Loại</label> <select class="form-control"
-							name="TheLoai" id="TheLoai"> @foreach($theloai as $tl)
-							<option value="{{$tl->id}}">{{$tl->Ten}}</option> @endforeach
+						<label>Khách Hàng</label> <select class="form-control"
+							name="khachhang" id="khachhang"> @foreach($khachhang as $kh)
+							<option value="{{$kh->id}}">{{$kh->tenkh}}</option> @endforeach
 						</select>
 					</div>
 					<div class="form-group">
-						<label>Loại Tin</label> <select class="form-control"
-							name="LoaiTin" id="LoaiTin"> @foreach($loaitin as $lt)
-							<option value="{{$lt->id}}">{{$lt->Ten}}</option> @endforeach
+						<label>Nhân Viên</label> <select class="form-control"
+							name="nhanvien" id="nhanvien"> @foreach($nhanvien as $nv)
+							<option value="{{$nv->id}}">{{$nv->tennv}}</option> @endforeach
 						</select>
 					</div>
 					<div class="form-group">
-						<label>Tiêu Đề</label> <input class="form-control" name="TieuDe"
-							placeholder="Nhập Tiêu Đề" />
+						<label>Thành Tiền</label>
+					    <input type="number" class="form-control" name="thanhtien" value="0" />
 					</div>
 					
 					<div class="form-group">
-						<label>Tóm Tắt</label>
-						<textarea name="TomTat" id="demo" class="form-control ckeditor" rows="5"></textarea>
+						<label>Ngày Lập</label>
+						<input type="date" name="ngaylap" id="demo" class="form-control ckeditor" >
 					</div>
 					<div class="form-group">
-						<label>Nội Dung</label>
-						<textarea name="NoiDung" id="demo" class="form-control ckeditor" rows="5"></textarea>
+						<label>Trạng Thái</label>
+						<input type="text" name="trangthai" class="form-control ckeditor" >
 					</div>
 					<div class="form-group">
-						<label>Hình Ảnh</label>
-						<input type="file" class="form-control" name="Hinh" />
-					</div>
-					<div class="form-group">
-						<label>Nổi Bật</label>
-						<label class="radio-inline">
-					    <input name="NoiBat" value="0" checked="" type="radio">Không Nổi Bật
-						</label>
-						<label class="radio-inline">
-						<input name="NoiBat" value="1" type="radio">Nổi Bật
-						</label>
+						<label>Ghi Chú</label>
+						<input type="text" class="form-control" name="ghichu" placeholder="Nhập Ghi Chú" />
 					</div>
 					<button type="submit" class="btn btn-default">Thêm</button>
 					<button type="reset" class="btn btn-default">Làm Mới</button>

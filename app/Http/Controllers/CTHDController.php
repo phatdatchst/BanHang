@@ -15,7 +15,7 @@ class CTHDController extends Controller
     public function getThem(){
         $hoadon = HoaDon::all();
         $sanpham = SanPham::all();
-        return view('admin.cthd.them',['hoadon' => $hoadon,'sanpham' => $sanpham]);
+        return view('admin.cthd.them',['sanpham' => $sanpham,'hoadon' => $hoadon]);
     }
     public function postThem(Request $request){
         
@@ -40,7 +40,6 @@ class CTHDController extends Controller
         $cthd->masp = $request->SanPham;
         $cthd->soluong = $request->soluong;
         $cthd->tonggia = $request->tonggia;
-        $cthd->save();
         $cthd->save();
         return redirect('admin/chitiet/sua/'.$id)->with('thongbao','Sửa Thành Công');
     }

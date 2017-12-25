@@ -34,15 +34,18 @@ Route::group(['prefix' => 'admin'],function(){
     Route::group(['prefix' => 'chitiet'],function(){
         Route::get('danhsach','CTHDController@getDanhSach');
         Route::get('sua/{id}','CTHDController@getSua');
-        Route::get('sua/{id}','CTHDController@postSua');
+        Route::post('sua/{id}','CTHDController@postSua');
         Route::get('them','CTHDController@getThem');
         Route::post('them','CTHDController@postThem');
-        Route::get('xoa/{id}','CTHDController@getThem');
+        Route::get('xoa/{id}','CTHDController@getXoa');
     });
     Route::group(['prefix' => 'hoadon'],function(){
         Route::get('danhsach','HoaDonController@getDanhSach');
-        Route::get('sua','HoaDonController@getSua');
+        Route::get('sua/{id}','HoaDonController@getSua');
+        Route::post('sua/{id}','HoaDonController@postSua');
         Route::get('them','HoaDonController@getThem');
+        Route::post('them','HoaDonController@postThem');
+        Route::get('xoa/{id}','HoaDonController@getXoa');
     });
     Route::group(['prefix' => 'khachhang'],function(){
         Route::get('danhsach','KhachHangController@getDanhSach');
@@ -50,6 +53,10 @@ Route::group(['prefix' => 'admin'],function(){
         Route::post('sua/{id}','KhachHangController@postSua');
         Route::get('them','KhachHangController@getThem');
         Route::post('them','KhachHangController@postThem');
+<<<<<<< HEAD
+=======
+        Route::get('xoa/{id}','KhachHangController@getXoa');
+>>>>>>> ba098b02b9ab146f5279e25662e973a06893b712
     });
     Route::group(['prefix' => 'nhacungcap'],function(){
         Route::get('danhsach','NhaCungCapController@getDanhSach');

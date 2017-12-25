@@ -27,110 +27,53 @@
 				<form action="admin/tintuc/sua/{{$tintuc->id}}" method="POST" enctype="multipart/form-data">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					<div class="form-group">
-						<label>Thể Loại</label> <select class="form-control"
-							name="TheLoai" id="TheLoai">
-						 @foreach($theloai as $tl)
+						<label>Mã Khách Hàng</label> <select class="form-control"
+							name="khachhang" id="khachhang">
+						 @foreach($khachhang as $kh)
 							<option
-								@if($tintuc->loaitin->theloai->id == $tl->id)
+								@if($hoadon->makh == $kh->id)
 									{{ "selected" }}
 								@endif
-							 	value="{{$tl->id}}">{{$tl->Ten}}
+							 	value="{{$kh->id}}">{{$kh->tenkh}}
 							 </option>
 						 @endforeach
 						</select>
 					</div>
 					<div class="form-group">
-						<label>Loại Tin</label> <select class="form-control"
-							name="LoaiTin" id="LoaiTin">
-						 @foreach($loaitin as $lt)
+						<label>Nhân viên</label> <select class="form-control"
+							name="nhanvien" id="nhanvien">
+						 @foreach($nhanvien as $nv)
 							<option
-								@if($tintuc->loaitin->id == $lt->id)
+								@if($hoadon->manv == $nv->id)
 									{{ "selected" }}
 								@endif
-							 	value="{{$lt->id}}">{{$lt->Ten}}
+							 	value="{{$nv->id}}">{{$lt->tennv}}
 							</option>
 						 @endforeach
 						</select>
 					</div>
 					<div class="form-group">
-						<label>Tiêu Đề</label> <input class="form-control" name="TieuDe"
-							placeholder="Nhập Tiêu Đề" value="{{$tintuc->TieuDe}}"/>
+						<label>Thành Tiền</label>
+						<input type="number" class="form-control" name="thanhtien" value="{{$hoadon->thanhtien}}"/>
 					</div>
 					
 					<div class="form-group">
-						<label>Tóm Tắt</label>
-						<textarea name="TomTat" id="demo" class="form-control ckeditor" rows="5" >{{$tintuc->TomTat}}</textarea>
+						<label>Ngày Lập</label>
+						<input type="date" name="ngaylap" class="form-control ckeditor" value="{{$hoadon->ngaylap}}">
 					</div>
 					<div class="form-group">
-						<label>Nội Dung</label>
-						<textarea name="NoiDung" id="demo" class="form-control ckeditor" rows="5" >{{$tintuc->NoiDung}}</textarea>
+						<label>Trạng Thái</label>
+						<input name="trangthai" class="form-control ckeditor" value="{{$hoadon->trangthai}}">
 					</div>
 					<div class="form-group">
-						<label>Hình Ảnh</label>
-						<br>
-						<img width="400px" alt="" src="uploads/tintuc/{{$tintuc->Hinh}}">
-						<br>
-						<input type="file" class="form-control" name="Hinh" />
-					</div>
-					<div class="form-group">
-						<label>Nổi Bật</label>
-						<label class="radio-inline">
-					    <input name="NoiBat" value="0"
-					    	@if($tintuc->NoiBat == 0)
-					    		{{ "checked" }}
-					    	@endif	
-					     type="radio">Không Nổi Bật
-						</label>
-						<label class="radio-inline">
-						<input name="NoiBat" value="1"
-							@if($tintuc->NoiBat == 1)
-					    		{{ "checked" }}
-					    	@endif
-						 type="radio">Nổi Bật
-						</label>
+						<label>Ghi Chú</label>
+						<input type="text" class="form-control" name="ghichu" value="{{$hoadon->ghichu}}" />
 					</div>
 					<button type="submit" class="btn btn-default">Sửa</button>
 					<button type="reset" class="btn btn-default">Làm Mới</button>
-					<form>
+					</form>
 			
 			</div>
-		</div>
-		<!-- /.row -->
-				<div class="row">
-			<div class="col-lg-12">
-				<h1 class="page-header">
-					Bình Luận <small>Danh Sách</small>
-				</h1>
-			</div>
-			<!-- /.col-lg-12 -->
-			@if(session('thongbao'))
-					<div class="alert alert-success">
-						{{session('thongbao')}}
-					</div>
-			@endif
-			<table class="table table-striped table-bordered table-hover"
-				id="dataTables-example">
-				<thead>
-					<tr align="center">
-						<th>ID</th>
-						<th>Người Dùng</th>
-						<th>Nội Dung</th>
-						<th>Ngày Đăng</th>				
-						<th>Delete</th>
-					</tr>
-				</thead>
-				<tbody>
-					@foreach($tintuc->comment as $cm)
-					<tr class="odd gradeX" align="center">
-						<td>{{$cm->id}}</td>
-						<td>{{$cm->user->name}}</td>
-						<td>{{$cm->NoiDung}}</td>
-						<td>{{$cm->created_at}}</td>
-						<td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/comment/xoa/{{$cm->id}}/{{$tintuc->id}}">Delete</a></td>
-					</tr>
-					@endforeach
-				</tbody>
-			</table>
 		</div>
 	</div>
 	<!-- /.container-fluid -->

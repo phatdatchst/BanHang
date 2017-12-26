@@ -23,49 +23,49 @@
 					
 					<div class="form-group">
 						<label>Tên sản phẩm</label> 
-						<input class="form-control" name="TieuDe" placeholder="Nhập Tên sản phẩm" />
+						<input class="form-control" name="tensp" placeholder="Nhập Tên sản phẩm" />
 					</div>
 					<div class="form-group">
 						<label>Chi tiết</label> 
-						<input class="form-control" name="TieuDe" placeholder="Nhập chi tiết" />
+						<input class="form-control" name="chitiet" placeholder="Nhập chi tiết" />
 					</div>
 					<div class="form-group">
 						<label>Giá nhập</label> 
-						<input class="form-control" name="TieuDe" placeholder="Nhập giá nhập" />
+						<input class="form-control" name="gianhap" placeholder="Nhập giá nhập" />
 					</div>
 					<div class="form-group">
 						<label>Giá bán</label> 
-						<input class="form-control" name="TieuDe" placeholder="Nhập giá bán" />
+						<input class="form-control" name="giaban" placeholder="Nhập giá bán" />
 					</div>
 					<div class="form-group">
 						<label>Số Lượng</label> 
-						<input class="form-control" name="TieuDe" type="number" placeholder="Nhập số lượng" />
+						<input class="form-control" name="soluong" type="number" placeholder="Nhập số lượng" />
 					</div>
 					
 					<div class="form-group">
 						<label>Hình Ảnh</label>
-						<input type="file" class="form-control" name="Hinh" />
+						<input type="file" class="form-control" name="hinhanh" />
 					</div>
 					<div class="form-group">
 						<label>Trạng thái</label> 
-						<input class="form-control" name="TieuDe" placeholder="Nhập trạng thái" />
+						<input class="form-control" name="trangthai" placeholder="Nhập trạng thái" />
 					</div>
 					<div class="form-group">
 						<label>Ngày nhập</label> 
-						<input class="form-control" name="TieuDe" placeholder="Nhập ngày nhập hàng" />
+						<input type="date" class="form-control" name="ngaynhap" placeholder="Nhập ngày nhập hàng" />
 					</div>
 					<div class="form-group">
 						<label>Mã Nhóm Sản Phẩm</label>
 						 <select class="form-control"
-							name="HoaDon" id="HoaDon"> @foreach($nhomsp as $nsp)
-							<option value="{{$hd->id}}">{{$nsp->id}}</option> @endforeach
+							name="manhomsp" id="HoaDon"> @foreach($nhomsp as $nsp)
+							<option value="{{$nsp->id}}">{{$nsp->id}}</option> @endforeach
 						</select>
 					</div>
 					<div class="form-group">
 						<label>Mã Nhà Cung Cấp</label>
 						 <select class="form-control"
-							name="HoaDon" id="HoaDon"> @foreach($nhacungcap as $ncc)
-							<option value="{{$hd->id}}">{{$ncc->id}}</option> @endforeach
+							name="mancc" id="HoaDon"> @foreach($nhacungcap as $ncc)
+							<option value="{{$ncc->id}}">{{$ncc->id}}</option> @endforeach
 						</select>
 					</div>
 					<button type="submit" class="btn btn-default">Thêm</button>

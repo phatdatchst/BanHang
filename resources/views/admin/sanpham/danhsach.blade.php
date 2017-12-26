@@ -5,7 +5,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<h1 class="page-header">
-					Tin Tức <small>Danh Sách</small>
+					Sản Phẩm <small>Danh Sách</small>
 				</h1>
 			</div>
 			<!-- /.col-lg-12 -->
@@ -44,14 +44,14 @@
 						<td>{{$sp->soluong}}</td>
 						<td>
 						  <p>{{$sp->hinhanh}}</p>
-						  <img width="100px" alt="" src="uploads/sanpham/{{$tt->Hinh}}"/>
+						  <img width="100px" alt="" src="uploads/sanpham/{{$sp->Hinh}}"/>
 						</td>
 						<td>{{$sp->trangthai}}</td>
 						<td>{{$sp->ngaynhap}}</td>
 						<td>{{$sp->manhomsp}}</td>
 						<td>{{$sp->mancc}}</td>		
-						<td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/sanpham/xoa/{{$tt->id}}">Delete</a></td>
-						<td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/sanpham/sua/{{$tt->id}}">Edit</a></td>
+						<td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/sanpham/xoa/{{$sp->id}}">Delete</a></td>
+						<td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/sanpham/sua/{{$sp->id}}">Edit</a></td>
 					</tr>
 					@endforeach
 				</tbody>

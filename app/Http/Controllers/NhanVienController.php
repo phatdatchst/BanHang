@@ -55,12 +55,12 @@ class NhanVienController extends Controller
         $nhanvien->email = $request->email;
         $nhanvien->sdt = $request->sdt;
         $nhanvien->save();
-        return redirect('admin/nhanvien/sua'.$id)->with('thong bao', 'Sửa thành công');
+        return redirect('admin/nhanvien/sua'.$id)->with('thongbao', 'Sửa thành công');
     }
     public function getXoa($id)
     {
         $nhanvien = NhanVien::find($id);
         $nhanvien->delete();
-        return redirect('admin/nhanvien/danhsach')->with('thong bao','xóa thành công');
+        return redirect('admin/nhanvien/danhsach')->with('thongbao','xóa thành công');
     }
 }

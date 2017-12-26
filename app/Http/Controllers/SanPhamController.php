@@ -55,8 +55,8 @@ class SanPhamController extends Controller
         $sanpham->soluong = $request->soluong;
         $sanpham->trangthai = $request->trangthai;
         $sanpham->ngaynhap = $request->ngaynhap;
-        $sanpham->manhomsp = $request->manhomsp;
-        $sanpham->mancc = $request->mancc;
+        $sanpham->manhomsp = $request->nhomsp;
+        $sanpham->mancc = $request->nhacungcap;
         if($request->hasFile('hinhanh'))
         {
             $file = $request->file('hinhanh');
@@ -123,8 +123,8 @@ class SanPhamController extends Controller
         $sanpham->soluong = $request->soluong;
         $sanpham->trangthai = $request->trangthai;
         $sanpham->ngaynhap = $request->ngaynhap;
-        $sanpham->manhomsp = $request->manhomsp;
-        $sanpham->mancc = $request->mancc;
+        $sanpham->manhomsp = $request->nhomsp;
+        $sanpham->mancc = $request->nhacungcap;
         if($request->hasFile('hinhanh'))
         {
             $file = $request->file('hinhanh');

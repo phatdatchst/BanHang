@@ -5,7 +5,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<h1 class="page-header">
-					Tin Tức <small>Thêm</small>
+					Hóa Đơn <small>Thêm</small>
 				</h1>
 			</div>
 			<!-- /.col-lg-12 -->
@@ -56,7 +56,7 @@
 					</div>
 					<button type="submit" class="btn btn-default">Thêm</button>
 					<button type="reset" class="btn btn-default">Làm Mới</button>
-					<form>
+					</form>
 			
 			</div>
 		</div>

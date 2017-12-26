@@ -28,13 +28,13 @@
 					<div class="form-group">
 						<label>Mã Hóa Đơn</label>
 						 <select class="form-control"
-							name="HoaDon" id="HoaDon"> @foreach($hoadon as $hd)
+							name="hoadon" id="hoadon"> @foreach($hoadon as $hd)
 							<option value="{{$hd->id}}">{{$hd->id}}</option> @endforeach
 						</select>
 					</div>
 					<div class="form-group">
 						<label>Sản Phẩm</label> <select class="form-control"
-							name="SanPham" id="SanPham"> @foreach($sanpham as $sp)
+							name="sanpham" id="sanpham"> @foreach($sanpham as $sp)
 							<option value="{{$sp->id}}">{{$sp->tensp}}</option> @endforeach
 						</select>
 					</div>

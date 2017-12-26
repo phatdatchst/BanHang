@@ -39,8 +39,8 @@
 						<td>{{$hd->ngaylap}}</td>
 						<td>{{$hd->trangthai}}</td>
 						<td>{{$hd->ghichu}}</td>
-						<td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/tintuc/xoa/{{$hd->id}}">Delete</a></td>
-						<td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/tintuc/sua/{{$hd->id}}">Edit</a></td>
+						<td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/hoadon/xoa/{{$hd->id}}">Delete</a></td>
+						<td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/hoadon/sua/{{$hd->id}}">Edit</a></td>
 					</tr>
 					@endforeach
 				</tbody>

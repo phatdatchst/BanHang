@@ -24,7 +24,7 @@
 						{{session('thongbao')}}
 					</div>
 				@endif
-				<form action="admin/chitiet/sua/{{$tintuc->id}}" method="POST">
+				<form action="admin/chitiet/sua/{{$cthd->id}}" method="POST">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					<div class="form-group">
 						<label>Mã Hóa Đơn</label> <select class="form-control"
@@ -44,7 +44,7 @@
 							name="LoaiTin" id="LoaiTin">
 						 @foreach($sanpham as $sp)
 							<option
-								@if($cthd->masp == $lt->id)
+								@if($cthd->masp == $sp->id)
 									{{ "selected" }}
 								@endif
 							 	value="{{$sp->id}}">{{$sp->tensp}}
@@ -63,7 +63,7 @@
 
 					<button type="submit" class="btn btn-default">Sửa</button>
 					<button type="reset" class="btn btn-default">Làm Mới</button>
-					<form>
+					</form>
 			
 			</div>
 		</div>

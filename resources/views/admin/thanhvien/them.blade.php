@@ -5,7 +5,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<h1 class="page-header">
-					Sản Phẩm <small>Thêm</small>
+					Thành viên <small>Thêm</small>
 				</h1>
 			</div>
 			<!-- /.col-lg-12 -->
@@ -22,24 +22,26 @@
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					
 					<div class="form-group">
-						<label>Mã khách hàng</label> 
-						<input class="form-control" name="TieuDe" placeholder="Nhập mã khách hàng" />
+						<label>Mã Khách Hàng</label> <select class="form-control"
+							name="khachhang" id="khachhang"> @foreach($khachhang as $kh)
+							<option value="{{$kh->id}}">{{$kh->id}}</option> @endforeach
+						</select>
 					</div>
 					<div class="form-group">
 						<label>Tên thành viên</label> 
-						<input class="form-control" name="TieuDe" placeholder="Nhập tên thành viên" />
+						<input class="form-control" name="tentv" placeholder="Nhập tên thành viên" />
 					</div>
 					<div class="form-group">
 						<label>Tài khoản</label> 
-						<input class="form-control" name="TieuDe" placeholder="Nhập tài khoản" />
+						<input class="form-control" name="taikhoan" placeholder="Nhập tài khoản" />
 					</div>
 					<div class="form-group">
 						<label>Mật khẩu</label> 
-						<input class="form-control" name="TieuDe" placeholder="Nhập mật khẩu" />
+						<input class="form-control" name="matkhau" placeholder="Nhập mật khẩu" />
 					</div>
 					<div class="form-group">
 						<label>Điểm tích lũy</label> 
-						<input class="form-control" name="TieuDe" type="number" placeholder="Nhập điểm" />
+						<input class="form-control" name="diemtichluy" type="number" placeholder="Nhập điểm" />
 					</div>
 					
 					

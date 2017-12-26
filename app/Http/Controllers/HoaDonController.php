@@ -15,7 +15,7 @@ class HoaDonController extends Controller
     public function getThem(){
         $khachhang = KhachHang::all();
         $nhanvien = NhanVien::all();
-        return view('admin.cthd.them',['khachhang' => $khachhang,'nhanvien' => $nhanvien]);
+        return view('admin.hoadon.them',['khachhang' => $khachhang,'nhanvien' => $nhanvien]);
     }
     public function postThem(Request $request){
         $this->validate($request, [

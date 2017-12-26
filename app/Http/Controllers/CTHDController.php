@@ -20,8 +20,8 @@ class CTHDController extends Controller
     public function postThem(Request $request){
         
         $cthd = new CTHD;
-        $cthd->mahd = $request->HoaDon;
-        $cthd->masp = $request->SanPham;
+        $cthd->mahd = $request->hoadon;
+        $cthd->masp = $request->sanpham;
         $cthd->soluong = $request->soluong;
         $cthd->tonggia = $request->tonggia;
         $cthd->save();
@@ -32,7 +32,7 @@ class CTHDController extends Controller
         $hoadon = HoaDon::all();
         $sanpham = SanPham::all();
         $cthd = CTHD::find($id);
-        return view('admin.danhmucsanpham.sua',['cthd' => $cthd,'sanpham' => $sanpham,'hoadon' => $hoadon]);
+        return view('admin.cthd.sua',['cthd' => $cthd,'sanpham' => $sanpham,'hoadon' => $hoadon]);
     }
     public function postSua(Request $request,$id){
         $cthd = CTHD::find($id);
@@ -46,6 +46,6 @@ class CTHDController extends Controller
     public function getXoa($id){
         $cthd = CTHD::find($id);
         $cthd->delete();
-        return redirect('admin/danhmucsanpham/danhsach')->with('thongbao','Xóa Thành Công');
+        return redirect('admin/chitiet/danhsach')->with('thongbao','Xóa Thành Công');
     }
 }

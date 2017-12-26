@@ -18,7 +18,7 @@ class KhachHangController extends Controller
         $this->validate($request, [
             'tenkh' => 'required|min:5|max:100',
             'ngaysinh' => 'required',
-            'diachi' => 'required|min:10|max:100',
+            'diachi' => 'required|min:5|max:100',
             'email' => 'required|min:10|max:100'
         ],
     
@@ -52,7 +52,7 @@ class KhachHangController extends Controller
         $this->validate($request, [
             'tenkh' => 'required|min:5|max:100',
             'ngaysinh' => 'required',
-            'diachi' => 'required|min:10|max:100',
+            'diachi' => 'required|min:5|max:100',
             'email' => 'required|min:10|max:100'
         ],
     

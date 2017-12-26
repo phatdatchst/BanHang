@@ -42,14 +42,19 @@ class NhanVienController extends Controller
         return view('admin.nhanvien.sua',['nhanvien'=>$nhanvien]);
     }
     public function postSua(Request $request, $id){
-        $this->validate($request, [
-            'tennv'=>'required|unique:nhanvien, tennv|min:2|max:30'
-        ],[
-            'tennv.required' => 'Bạn Chưa Nhập Tên Nhân Viên',
-            'tennv.unique' => 'Tên Nhân Viên Đã Tồn Tại',
-            'tennv.min' => 'Tên Nhân Viên Quá Ngắn',
-            'tennv.max' => 'Tên Nhân Viên Quá Dài',
-        ]);
+        $this->validate($request, 
+            [
+                'tennv'=>'required|min:2|max:30',
+                'email'=>'required|min:2|max:30',
+                'sdt'=>'required|max:12',  
+            ],[
+                'tennv.required' =>'Bạn chưa nhập tên nhân viên',
+                'tennv.min'=>'Tên nhân viên quá ngắn',
+                'tennv.max'=>'Tên nhân viên quá dài',
+                'email.required' =>'Bạn chưa nhập email',
+                'email.min'=>'Email quá ngắn',
+                'email.max'=>'Email quá dài',     
+            ]);
         $nhanvien = NhanVien::find($id);
         $nhanvien->tennv = $request->tennv;
         $nhanvien->email = $request->email;

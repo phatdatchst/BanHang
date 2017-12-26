@@ -44,6 +44,7 @@
 					
 					<div class="form-group">
 						<label>Hình Ảnh</label>
+						<img width="100px" src ="upload/images/{{$sanpham->hinhanh}}">
 						<input type="file" class="form-control" name="hinhanh" />
 					</div>
 					<div class="form-group">

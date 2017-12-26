@@ -49,7 +49,7 @@
 					
 					<div class="form-group">
 						<label>Hình Ảnh</label>
-						<img width="400px" src ="upload/images/{{$sanpham->hinhanh}}">
+						<img width="100px" src ="upload/images/{{$sanpham->hinhanh}}">
 						<input type="file" class="form-control" name="hinhanh" />
 						
 					</div>

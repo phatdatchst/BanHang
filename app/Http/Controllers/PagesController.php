@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\SanPham;
+use App\DanhMuc;
 class PagesController extends Controller
 {
     public function getIndex(){
-        $sanpham = SanPham::where('manhomsp','1')->get();
-        return view('pages.trangchu',compact('sanpham'));
+        $nhomsp = DanhMuc::all();
+        $sanpham = SanPham::all();
+        //sửa lại lấy all
+        return view('pages.trangchu',compact('sanpham','nhomsp'));
     }
 }

@@ -1,5 +1,4 @@
 @extends('layout.index')
-
 @section('content')
 			<section  class="homepage-slider" id="home-slider">
 				<div class="flexslider">
@@ -33,9 +32,9 @@
 										@foreach($sanpham as $sp)
 											<div class="product-box">
 												<span class="sale_tag"></span>
-												<p><a href="./chitietsanpham"><img src="themes/images/cloth/{{$sp->hinhanh}}" alt="" /></a></p>
+												<p><a href="./chitietsanpham"><img src="themes/images/cloth/{{$sp->hinhanh}}" alt="" width="169px" height="220px"/></a></p>
 												<a href="./chitietsanpham" class="title">{{$sp->tensp}}</a><br/>
-												<a href="./sanpham" class="category">{{$sp->manhomsp}}</a>
+												<a href="./chitietsanpham" class="title">{{$sp->chitiet}}</a><br/>
 												<p class="price">{{$sp->giaban}}</p>
 											</div>
 										@endforeach
@@ -46,7 +45,7 @@
 								</div>
 							</div>						
 						</div>
-									<div class="row">
+						<div class="row">
 							<div class="span12">
 								<h4 class="title">
 									<span class="pull-left"><span class="text"><span class="line"><strong>Áo</strong></span></span></span>

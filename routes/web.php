@@ -86,9 +86,7 @@ Route::group(['prefix' => 'admin'],function(){
 });
 
 
-Route::get('trangchu', function (){
-    return view('pages.trangchu');
-});
+Route::get('trangchu','PagesController@getIndex');
 
 
 Route::get('giohang', function (){

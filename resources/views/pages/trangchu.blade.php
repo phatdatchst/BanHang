@@ -24,52 +24,23 @@
 						<div class="row">
 							<div class="span12">
 								<h4 class="title">
-									<span class="pull-left"><span class="text"><span class="line">Feature <strong>Products</strong></span></span></span>
+									<span class="pull-left"><span class="text"><span class="line"> <strong>Quần</strong></span></span></span>
 								</h4>
 								<div class="row">
 										<div class="item" style="margin-left: 30px;">
 									<ul class="thumbnails">												
 										<li class="span3">
+										@foreach($sanpham as $sp)
 											<div class="product-box">
 												<span class="sale_tag"></span>
-												<p><a href="product_detail.html"><img src="themes/images/cloth/bootstrap-women-ware2.jpg" alt="" /></a></p>
-												<a href="product_detail.html" class="title">Ut wisi enim ad</a><br/>
-												<a href="products.html" class="category">Commodo consequat</a>
-												<p class="price">$25.50</p>
+												<p><a href="./chitietsanpham"><img src="themes/images/cloth/{{$sp->hinhanh}}" alt="" /></a></p>
+												<a href="./chitietsanpham" class="title">{{$sp->tensp}}</a><br/>
+												<a href="./sanpham" class="category">{{$sp->manhomsp}}</a>
+												<p class="price">{{$sp->giaban}}</p>
 											</div>
+										@endforeach
 										</li>
-										<li class="span3">
-											<div class="product-box">
-												<p><a href="product_detail.html"><img src="themes/images/cloth/bootstrap-women-ware1.jpg" alt="" /></a></p>
-												<a href="product_detail.html" class="title">Quis nostrud exerci tation</a><br/>
-												<a href="products.html" class="category">Quis nostrud</a>
-												<p class="price">$17.55</p>
-											</div>
-										</li>
-										<li class="span3">
-											<div class="product-box">
-												<p><a href="product_detail.html"><img src="themes/images/cloth/bootstrap-women-ware6.jpg" alt="" /></a></p>
-												<a href="product_detail.html" class="title">Know exactly turned</a><br/>
-												<a href="products.html" class="category">Quis nostrud</a>
-												<p class="price">$25.30</p>
-											</div>
-										</li>
-										<li class="span3">
-											<div class="product-box">
-												<p><a href="product_detail.html"><img src="themes/images/cloth/bootstrap-women-ware5.jpg" alt="" /></a></p>
-												<a href="product_detail.html" class="title">You think fast</a><br/>
-												<a href="products.html" class="category">World once</a>
-												<p class="price">$25.60</p>
-											</div>
-										</li>
-										<li class="span3">
-											<div class="product-box">
-												<p><a href="product_detail.html"><img src="themes/images/cloth/bootstrap-women-ware5.jpg" alt="" /></a></p>
-												<a href="product_detail.html" class="title">You think fast</a><br/>
-												<a href="products.html" class="category">World once</a>
-												<p class="price">$25.60</p>
-											</div>
-										</li>
+										
 									</ul>
 								</div>
 								</div>
@@ -78,7 +49,7 @@
 									<div class="row">
 							<div class="span12">
 								<h4 class="title">
-									<span class="pull-left"><span class="text"><span class="line">Feature <strong>Products</strong></span></span></span>
+									<span class="pull-left"><span class="text"><span class="line"><strong>Áo</strong></span></span></span>
 								</h4>
 								<div class="row">
 										<div class="item" style="margin-left: 30px;">
@@ -92,43 +63,106 @@
 												<p class="price">$25.50</p>
 											</div>
 										</li>
-										<li class="span3">
-											<div class="product-box">
-												<p><a href="product_detail.html"><img src="themes/images/cloth/bootstrap-women-ware1.jpg" alt="" /></a></p>
-												<a href="product_detail.html" class="title">Quis nostrud exerci tation</a><br/>
-												<a href="products.html" class="category">Quis nostrud</a>
-												<p class="price">$17.55</p>
-											</div>
-										</li>
-										<li class="span3">
-											<div class="product-box">
-												<p><a href="product_detail.html"><img src="themes/images/cloth/bootstrap-women-ware6.jpg" alt="" /></a></p>
-												<a href="product_detail.html" class="title">Know exactly turned</a><br/>
-												<a href="products.html" class="category">Quis nostrud</a>
-												<p class="price">$25.30</p>
-											</div>
-										</li>
-										<li class="span3">
-											<div class="product-box">
-												<p><a href="product_detail.html"><img src="themes/images/cloth/bootstrap-women-ware5.jpg" alt="" /></a></p>
-												<a href="product_detail.html" class="title">You think fast</a><br/>
-												<a href="products.html" class="category">World once</a>
-												<p class="price">$25.60</p>
-											</div>
-										</li>
-										<li class="span3">
-											<div class="product-box">
-												<p><a href="product_detail.html"><img src="themes/images/cloth/bootstrap-women-ware5.jpg" alt="" /></a></p>
-												<a href="product_detail.html" class="title">You think fast</a><br/>
-												<a href="products.html" class="category">World once</a>
-												<p class="price">$25.60</p>
-											</div>
-										</li>
+										
 									</ul>
 								</div>
 								</div>
 							</div>						
 						</div>
+						<div class="row">
+							<div class="span12">
+								<h4 class="title">
+									<span class="pull-left"><span class="text"><span class="line"><strong>Nhẫn</strong></span></span></span>
+								</h4>
+								<div class="row">
+										<div class="item" style="margin-left: 30px;">
+									<ul class="thumbnails">												
+										<li class="span3">
+											<div class="product-box">
+												<span class="sale_tag"></span>
+												<p><a href="product_detail.html"><img src="themes/images/cloth/bootstrap-women-ware2.jpg" alt="" /></a></p>
+												<a href="product_detail.html" class="title">Ut wisi enim ad</a><br/>
+												<a href="products.html" class="category">Commodo consequat</a>
+												<p class="price">$25.50</p>
+											</div>
+										</li>
+										
+									</ul>
+								</div>
+								</div>
+							</div>						
+						</div>
+						<div class="row">
+							<div class="span12">
+								<h4 class="title">
+									<span class="pull-left"><span class="text"><span class="line"><strong>Bông tai</strong></span></span></span>
+								</h4>
+								<div class="row">
+										<div class="item" style="margin-left: 30px;">
+									<ul class="thumbnails">												
+										<li class="span3">
+										
+											<div class="product-box">
+												<span class="sale_tag"></span>
+												<p><a href="product_detail.html"><img src="themes/images/cloth/bootstrap-women-ware2.jpg" alt="" /></a></p>
+												<a href="product_detail.html" class="title">Ut wisi enim ad</a><br/>
+												<a href="products.html" class="category">Commodo consequat</a>
+												<p class="price">$25.50</p>
+											</div>
+										
+										</li>			
+									</ul>
+								</div>
+								</div>
+							</div>						
+						</div>
+						<div class="row">
+							<div class="span12">
+								<h4 class="title">
+									<span class="pull-left"><span class="text"><span class="line"><strong>Vòng Cổ</strong></span></span></span>
+								</h4>
+								<div class="row">
+										<div class="item" style="margin-left: 30px;">
+									<ul class="thumbnails">												
+										<li class="span3">
+											<div class="product-box">
+												<span class="sale_tag"></span>
+												<p><a href="product_detail.html"><img src="themes/images/cloth/bootstrap-women-ware2.jpg" alt="" /></a></p>
+												<a href="product_detail.html" class="title">Ut wisi enim ad</a><br/>
+												<a href="products.html" class="category">Commodo consequat</a>
+												<p class="price">$25.50</p>
+											</div>
+										</li>
+										
+									</ul>
+								</div>
+								</div>
+							</div>						
+						</div>
+						<div class="row">
+							<div class="span12">
+								<h4 class="title">
+									<span class="pull-left"><span class="text"><span class="line"><strong>Bộ phụ kiện</strong></span></span></span>
+								</h4>
+								<div class="row">
+										<div class="item" style="margin-left: 30px;">
+									<ul class="thumbnails">												
+										<li class="span3">
+											<div class="product-box">
+												<span class="sale_tag"></span>
+												<p><a href="product_detail.html"><img src="themes/images/cloth/bootstrap-women-ware2.jpg" alt="" /></a></p>
+												<a href="product_detail.html" class="title">Ut wisi enim ad</a><br/>
+												<a href="products.html" class="category">Commodo consequat</a>
+												<p class="price">$25.50</p>
+											</div>
+										</li>
+										
+									</ul>
+								</div>
+								</div>
+							</div>						
+						</div>
+						
 						<br/>
 						<div class="row feature_box">						
 							<div class="span4">

@@ -44,7 +44,7 @@
 						<td>{{$sp->soluong}}</td>
 						<td>
 						  <p>{{$sp->hinhanh}}</p>
-						  <img width="100px" alt="" src="uploads/sanpham/{{$sp->Hinh}}"/>
+						  <img width="100px" alt="" src="uploads/sanpham/{{$sp->hinhanh}}"/>
 						</td>
 						<td>{{$sp->trangthai}}</td>
 						<td>{{$sp->ngaynhap}}</td>

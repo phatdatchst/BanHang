@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\DanhMuc;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -14,6 +15,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        view()->composer('layout.header',function($view){
+            $nhomsp = DanhMuc::all();
+            $view->with('nhomsp', $nhomsp);
+        });
     }
 
     /**

@@ -23,12 +23,9 @@
 					<a href="./trangchu" class="logo pull-left"><img src="themes/images/logo.png" class="site_logo" alt=""></a>
 					<nav id="menu" class="pull-right">
 						<ul>
-							<li><a href="./sanpham">Quần</a></li>															
-							<li><a href="./sanpham">Áo</a></li>			
-							<li><a href="./sanpham">Nhẫn</a></li>							
-							<li><a href="./sanpham">Bông Tai</a></li>
-							<li><a href="./sanpham">Vòng Cổ</a></li>
-							<li><a href="./sanpham">Bộ Phụ Kiện</a></li>
+						@foreach($nhomsp as $nsp)
+							<li><a href="{{route('nhomsp',$nsp->id)}}">{{$nsp->tennhom}}</a></li>		
+							@endforeach
 						</ul>
 					</nav>
 				</div>

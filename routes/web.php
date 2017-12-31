@@ -102,12 +102,15 @@ Route::get('gioithieu', function (){
     return view('pages.gioithieu');
 });
         
-Route::get('chitietsanpham', function (){
-    return view('pages.chitietsanpham');
-});
+Route::get('chitietsanpham/{id}',[
+    'as'=>'chitietsanpham',
+    'uses'=>'PagesController@getChiTiet']
+    );
 Route::get('dangki', function (){
     return view('pages.dangki');
 });
-Route::get('sanpham', function (){
-    return view('pages.sanpham');
-});
+Route::get('sanpham/{type}',[
+    'as'=>'nhomsp',
+    'uses'=>'PagesController@getSanPham']
+    );
+

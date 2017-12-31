@@ -37,9 +37,9 @@
 										@foreach($sanphamtheodanhmuc as $sp)
 											<div class="product-box">
 												<span class="sale_tag"></span>
-												<p><a href="./chitietsanpham"><img src="themes/images/cloth/{{$sp->hinhanh}}" alt="" width="169px" height="220px"/></a></p>
-												<a href="./chitietsanpham" class="title">{{$sp->tensp}}</a><br/>
-												<a href="./chitietsanpham" class="title">{{$sp->chitiet}}</a><br/>
+												<p><a href="{{route('chitietsanpham', $sp->id)}}"><img src="themes/images/cloth/{{$sp->hinhanh}}" alt="" width="169px" height="220px"/></a></p>
+												<a href="{{route('chitietsanpham', $sp->id)}}" class="title">{{$sp->tensp}}</a><br/>
+												<a href="{{route('chitietsanpham', $sp->id)}}" class="title">{{$sp->chitiet}}</a><br/>
 												<p class="price">{{$sp->giaban}}</p>
 											</div>
 										@endforeach

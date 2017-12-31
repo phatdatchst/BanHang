@@ -15,7 +15,7 @@ class DanhMucController extends Controller
     }
     public function postThem(Request $request){
         $this->validate($request, [
-            'tennhom' => 'required|min:5|max:100|unique:nhomsp,tennhom'
+            'tennhom' => 'required|min:2|max:100|unique:nhomsp,tennhom'
         ],
             
         [
@@ -37,7 +37,7 @@ class DanhMucController extends Controller
     public function postSua(Request $request,$id){
         $nhomsp = DanhMuc::find($id);
         $this->validate($request, [
-            'tennhom' => 'required|unique:nhomsp,tennhom|min:5|max:100'
+            'tennhom' => 'required|unique:nhomsp,tennhom|min:2|max:100'
         ],
         [
             'tennhom.required' => 'Bạn Chưa Nhập Tên Danh Mục',

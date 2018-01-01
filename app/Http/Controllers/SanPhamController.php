@@ -16,6 +16,7 @@ class SanPhamController extends Controller
     public function getThem(){
         $nhomsp = DanhMuc::all();
         $nhacungcap = NhaCungCap::all();
+       
         return view('admin.sanpham.them',['nhomsp' => $nhomsp, 'nhacungcap'=>$nhacungcap]);
     }
      public function postThem(Request $request){
@@ -24,7 +25,7 @@ class SanPhamController extends Controller
             'chitiet' => 'required|min:2|max:500',
             'gianhap' => 'required|min:2|max:50',
             'giaban' => 'required|min:2|max:50',
-            'soluong' => 'required|min:2|max:50',
+            'soluong' => 'required|min:1|max:50',
             'hinhanh' => 'required',
             'trangthai' => 'required|min:2|max:50',
             'ngaynhap' => 'required|min:2|max:50',
@@ -55,8 +56,8 @@ class SanPhamController extends Controller
         $sanpham->soluong = $request->soluong;
         $sanpham->trangthai = $request->trangthai;
         $sanpham->ngaynhap = $request->ngaynhap;
-        $sanpham->manhomsp = $request->nhomsp;
-        $sanpham->mancc = $request->nhacungcap;
+        $sanpham->manhomsp = $request->manhomsp;
+        $sanpham->mancc = $request->mancc;
         if($request->hasFile('hinhanh'))
         {
             $file = $request->file('hinhanh');
@@ -92,12 +93,12 @@ class SanPhamController extends Controller
             'chitiet' => 'required|min:2|max:500',
             'gianhap' => 'required|min:2|max:50',
             'giaban' => 'required|min:2|max:50',
-            'soluong' => 'required|min:2|max:50',
+            'soluong' => 'required|min:1|max:50',
             'hinhanh' => 'required',
             'trangthai' => 'required|min:2|max:50',
             'ngaynhap' => 'required|min:2|max:50',
             'manhomsp' => 'required|max:12',
-            'mancc' => 'required|min:5|max:100',
+            'mancc' => 'required|min:1|max:100',
         ],
             
         [
@@ -123,8 +124,8 @@ class SanPhamController extends Controller
         $sanpham->soluong = $request->soluong;
         $sanpham->trangthai = $request->trangthai;
         $sanpham->ngaynhap = $request->ngaynhap;
-        $sanpham->manhomsp = $request->nhomsp;
-        $sanpham->mancc = $request->nhacungcap;
+        $sanpham->manhomsp = $request->manhomsp;
+        $sanpham->mancc = $request->mancc;
         if($request->hasFile('hinhanh'))
         {
             $file = $request->file('hinhanh');

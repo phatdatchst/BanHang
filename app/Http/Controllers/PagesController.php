@@ -9,7 +9,7 @@ class PagesController extends Controller
 {
     public function getIndex(){
         $nhomsp = DanhMuc::all();
-        $sanpham = SanPham::all();
+        $sanpham = SanPham::all()->take(4);
         //sửa lại lấy all
         return view('pages.trangchu',compact('sanpham','nhomsp'));
     }

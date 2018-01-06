@@ -87,16 +87,12 @@ Route::group(['prefix' => 'admin'],function(){
 
 
 Route::get('trangchu','PagesController@getIndex');
-
-
-Route::get('giohang', function (){
-   return view('pages.giohang');
-});
-
-Route::get('thanhtoan', function (){
-    return view('pages.thanhtoan');
-});
-
+Route::get('mua-hang/{id}/{tensanpham}',['as' => 'muahang','uses' => 'PagesController@muahang']);
+Route::get('gio-hang', ['as' => 'giohang','uses' => 'PagesController@giohang']);
+Route::get('xoasp/{id}',['as' => 'xoasp','uses' =>'PagesController@xoasp']);
+Route::get('capnhat/{id}/{qty}',['as' => 'capnhat','uses' =>'PagesController@capnhat']);
+Route::get('thanhtoan','PagesController@thanhtoan');
+Route::post('thanh-toan','PagesController@postthanhtoan');
         
 Route::get('gioithieu', function (){
     return view('pages.gioithieu');
@@ -109,8 +105,5 @@ Route::get('chitietsanpham/{id}',[
 Route::get('dangki', function (){
     return view('pages.dangki');
 });
-Route::get('sanpham/{type}',[
-    'as'=>'nhomsp',
-    'uses'=>'PagesController@getSanPham']
-    );
+Route::get('sanpham/{type}',['as'=>'nhomsp','uses'=>'PagesController@getSanPham']);
 

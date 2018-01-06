@@ -7,11 +7,20 @@
 				</div>
 				<div class="span8">
 					<div class="account pull-right">
-						<ul class="user-menu">				
+						<ul class="user-menu">
+						@if(Auth::check())
+						<li><a href="">Chào bạn {{Auth::user()->name}}</a></li>
+							@if(Auth::user()->quyen == 1)
+							<li><a href="{{route('test')}}">Di Chuyển Trang Back-end</a></li>
+							@endif
+						<li><a href="{{route('logout')}}">Đăng xuất</a></li>		
+						@else				
 							<li><a href="#">My Account</a></li>
 							<li><a href="cart.html">Your Cart</a></li>
-							<li><a href="checkout.html">Checkout</a></li>					
-							<li><a href="register.html">Login</a></li>		
+							<li><a href="checkout.html">Checkout</a></li>								
+							<li><a href="{{route('signin')}}">Đăng Kí</a></li>
+							<li><a href="{{route('login')}}">Đăng Nhập</a></li>
+							@endif			
 						</ul>
 					</div>
 				</div>

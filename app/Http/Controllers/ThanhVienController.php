@@ -12,6 +12,9 @@ class ThanhVienController extends Controller
         $thanhvien = ThanhVien::all();
         return view('admin.thanhvien.danhsach',['thanhvien'=>$thanhvien]);
     }
+    public function getadmin(){
+        return view('admin.thanhvien.danhsach',['thanhvien'=>$thanhvien]);
+    }
     public function getThem(){
         $khachhang = KhachHang::all();
         return view('admin.thanhvien.them',['khachhang'=>$khachhang]);

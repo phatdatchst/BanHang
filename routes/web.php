@@ -87,7 +87,10 @@ Route::group(['prefix' => 'admin'],function(){
 
 
 Route::get('trangchu','PagesController@getIndex');
-
+Route::get('index',[
+    'as'=>'trangchu',
+    'uses'=>'PagesController@getIndex']
+    );
 
 Route::get('giohang', function (){
    return view('pages.giohang');
@@ -106,11 +109,31 @@ Route::get('chitietsanpham/{id}',[
     'as'=>'chitietsanpham',
     'uses'=>'PagesController@getChiTiet']
     );
-Route::get('dangki', function (){
-    return view('pages.dangki');
-});
+Route::get('dangnhap',[
+    'as'=>'login',
+    'uses'=>'PagesController@getLogin']
+    );
+Route::post('dangnhap',[
+    'as'=>'login',
+    'uses'=>'PagesController@postLogin']
+    );
+Route::get('dangki',[
+    'as'=>'signin',
+    'uses'=>'PagesController@getSignin']
+    );
+Route::post('dangki',[
+    'as'=>'signin',
+    'uses'=>'PagesController@postSignin']
+    );
+Route::get('dangxuat',[
+    'as'=>'logout',
+    'uses'=>'PagesController@postLogout']
+    );
 Route::get('sanpham/{type}',[
     'as'=>'nhomsp',
     'uses'=>'PagesController@getSanPham']
     );
+Route::get('admins',['as' => 'test','uses' =>'ThanhVienController@getdanhsach']);
+
+
 

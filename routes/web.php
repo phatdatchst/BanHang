@@ -87,6 +87,7 @@ Route::group(['prefix' => 'admin'],function(){
 
 
 Route::get('trangchu','PagesController@getIndex');
+<<<<<<< HEAD
 Route::get('index',[
     'as'=>'trangchu',
     'uses'=>'PagesController@getIndex']
@@ -100,6 +101,14 @@ Route::get('thanhtoan', function (){
     return view('pages.thanhtoan');
 });
 
+=======
+Route::get('mua-hang/{id}/{tensanpham}',['as' => 'muahang','uses' => 'PagesController@muahang']);
+Route::get('gio-hang', ['as' => 'giohang','uses' => 'PagesController@giohang']);
+Route::get('xoasp/{id}',['as' => 'xoasp','uses' =>'PagesController@xoasp']);
+Route::get('capnhat/{id}/{qty}',['as' => 'capnhat','uses' =>'PagesController@capnhat']);
+Route::get('thanhtoan','PagesController@thanhtoan');
+Route::post('thanh-toan','PagesController@postthanhtoan');
+>>>>>>> 9cd75fb5eb19eb805d7d5b9de740bffa24e0697a
         
 Route::get('gioithieu', function (){
     return view('pages.gioithieu');
@@ -109,6 +118,7 @@ Route::get('chitietsanpham/{id}',[
     'as'=>'chitietsanpham',
     'uses'=>'PagesController@getChiTiet']
     );
+<<<<<<< HEAD
 Route::get('dangnhap',[
     'as'=>'login',
     'uses'=>'PagesController@getLogin']
@@ -136,4 +146,10 @@ Route::get('sanpham/{type}',[
 Route::get('admins',['as' => 'test','uses' =>'ThanhVienController@getdanhsach']);
 
 
+=======
+Route::get('dangki', function (){
+    return view('pages.dangki');
+});
+Route::get('sanpham/{type}',['as'=>'nhomsp','uses'=>'PagesController@getSanPham']);
+>>>>>>> 9cd75fb5eb19eb805d7d5b9de740bffa24e0697a
 

@@ -34,7 +34,7 @@
 									<p>&nbsp;</p>
 									<label>Qty:</label>
 									<input type="text" class="span1" placeholder="1">
-									<button class="btn btn-inverse" type="submit">Add to cart</button>
+									<a href="{{ url('mua-hang',[$sanpham->id,$sanpham->tensp]) }}" class="btn btn-inverse" type="submit">Add to cart</a>
 								</form>
 							</div>							
 						</div>

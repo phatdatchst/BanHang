@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+#content {
+    padding: 60px 0;
+}
+form {
+    display: inline;
+}
+div, form, fieldset, legend, label {
+    margin: 0;
+    padding: 0;
+}
+h4, .h4 {
+    color: #253951;
+    font-size: 2.30769em;
+    line-height: 39.78px;
+    font-family: "Open Sans",sans-serif;
+    font-weight: 300;
+    margin-top: 0;
+}
+.space20 {
+    line-height: 20px;
+}
+.form-block {
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.form-block label {
+    width: 100px;
+    font-weight: lighter;
+}
+.form-block>* {
+    float: left;
+}
+.form-block input, .form-block select, .beta-form-checkout textarea {
+    width: 60%;
+    overflow: hidden;
+}
+.beta-form-checkout input {
+    margin-bottom: 5px;
+}
+.your-order {
+    border: 1px solid #e8e8e8;
+    padding-bottom: 35px;
+}
+.your-order>.your-order-head:first-child {
+    border-top: none;
+}
+.clearfix:before, .clearfix:after, .container:before, .container:after, .container-fluid:before, .container-fluid:after, .row:before, .row:after, .form-horizontal .form-group:before, .form-horizontal .form-group:after, .btn-toolbar:before, .btn-toolbar:after, .btn-group-vertical>.btn-group:before, .btn-group-vertical>.btn-group:after, .nav:before, .nav:after, .navbar:before, .navbar:after, .navbar-header:before, .navbar-header:after, .navbar-collapse:before, .navbar-collapse:after, .pager:before, .pager:after, .panel-body:before, .panel-body:after, .modal-footer:before, .modal-footer:after {
+    content: " ";
+    display: table;
+}
+.col-sm-6 {
+    width: 45%;
+    margin-left: 58px;
+}
+.col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+    float: left;
+}
+.your-order-head {
+    height: 55px;
+    background-color: #f8f8f8;
+    padding: 0 40px;
+    border-top: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+}
+div, form, fieldset, legend, label {
+    margin: 0;
+    padding: 0;
+}
+h5, .h5 {
+    color: #253951;
+    font-size: 1.92308em;
+    line-height: 39.78px;
+    font-family: "Open Sans",sans-serif;
+    font-weight: 400;
+    margin-top: 0;
+}
+.your-order-body {
+    padding: 30px 40px;
+}
+.your-order-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #f8f8f8;
+}
+.media:first-child {
+    margin-top: 0;
+}
+.media, .media-body {
+    overflow: hidden;
+    zoom: 1;
+}
+.media>.pull-left {
+    margin-right: 10px;
+}
+.pull-left {
+    float: left!important;
+}
+.font-large {
+    font-size: 15px;
+}
+.your-order-info {
+    display: block;
+    margin-top: -5px;
+    margin-bottom: -2px;
+}
+.color-gray {
+    color: #a3a2a2;
+}
+.your-order-item:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+.your-order-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #f8f8f8;
+}
+.your-order-f18 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.pull-right {
+    float: right!important;
+}
+.your-order-body h5 {
+    margin-top: -10px;
+}
+.color-black {
+    color: #000;
+}
+h5, .h5 {
+    color: #253951;
+    font-size: 1.92308em;
+    line-height: 39.78px;
+    font-family: "Open Sans",sans-serif;
+    font-weight: 400;
+    margin-top: 0;
+}
+ul.payment_methods, .woocommerce-page #payment ul.payment_methods {
+    text-align: left;
+    padding: 1em;
+    margin: 0;
+    list-style: none outside;
+}
+.payment_methods li {
+    margin-bottom: 10px;
+}
+.beta-form-checkout input {
+    margin-bottom: 5px;
+}
+.payment_methods li label {
+    font-size: 15px;
+    color: #000;
+}
+ul, ol, ul label, ol label {
+    font-weight: 300;
+}
+.payment_box {
+    background: #f8f8f8;
+    margin-left: 17px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding: 20px;
+}

@@ -16,11 +16,17 @@
 						<li><a href="{{route('logout')}}">Đăng xuất</a></li>		
 						@else				
 							<li><a href="#">My Account</a></li>
+<<<<<<< HEAD
 							<li><a href="cart.html">Your Cart</a></li>
 							<li><a href="checkout.html">Checkout</a></li>								
 							<li><a href="{{route('signin')}}">Đăng Kí</a></li>
 							<li><a href="{{route('login')}}">Đăng Nhập</a></li>
 							@endif			
+=======
+							<li><a href="cart.html">Giỏ Hàng</a></li>
+							<li><a href="checkout.html">Checkout</a></li>					
+							<li><a href="register.html">Login</a></li>		
+>>>>>>> 9cd75fb5eb19eb805d7d5b9de740bffa24e0697a
 						</ul>
 					</div>
 				</div>

@@ -20,7 +20,7 @@
 					<tr align="center">
 						<th>ID</th>
 						<th>Mã Hóa Đơn</th>
-						<th>Mã Sản Phẩm</th>
+						<th>Tên Sản Phẩm</th>
 						<th>Số Lượng</th>
 						<th>Tổng Giá</th>
 						<th>Delete</th>
@@ -32,7 +32,7 @@
 					<tr class="odd gradeX" align="center">
 						<td>{{$ct->id}}</td>
 						<td>{{$ct->mahd}}</td>
-						<td>{{$ct->masp}}</td>
+						<td>{{$ct->tensp}}</td>
 						<td>{{$ct->soluong}}</td>
 						<td>{{$ct->tonggia}}</td>
 						<td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/chitiet/xoa/{{$ct->id}}">Delete</a></td>

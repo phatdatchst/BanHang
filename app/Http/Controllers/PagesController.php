@@ -5,18 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\SanPham;
 use App\DanhMuc;
-<<<<<<< HEAD
+
 use App\ThanhVien;
 use Hash;
 use Illuminate\Support\Facades\Auth;
 use App\User;
-=======
+
 use Cart;
-use Illuminate\Support\Facades\Auth;
+//use Illuminate\Support\Facades\Auth;
 use App\KhachHang;
 use App\CTHD;
 use App\HoaDon;
->>>>>>> 9cd75fb5eb19eb805d7d5b9de740bffa24e0697a
+
 class PagesController extends Controller
 {
     public function getIndex(){
@@ -34,7 +34,7 @@ class PagesController extends Controller
         $sanphamtuongtu = SanPham::where('manhomsp', $sanpham->manhomsp)->paginate(3);
         return view('pages.chitietsanpham',compact('sanpham','sanphamtuongtu'));
     }
-<<<<<<< HEAD
+
     public function getSignin() {
         return view('pages.dangki');
     }
@@ -96,7 +96,7 @@ class PagesController extends Controller
         Auth::logout();
         return redirect()->route('trangchu');
     }
-=======
+
     public function muahang($id){
         $sanpham = SanPham::where('id',$id)->first();
         Cart::add(
@@ -132,8 +132,8 @@ class PagesController extends Controller
         $khachhang = new KhachHang;
         $khachhang->tenkh = $request->tenkh;
         $khachhang->gioitinh = $request->gender;
-        $khachhang->email = $request->email;
         $khachhang->diachi = $request->diachi;
+        $khachhang->email = $request->email;      
         $khachhang->sdt = $request->sdt;
         $khachhang->ghichu = $request->ghichu;
         $khachhang->save();
@@ -157,6 +157,12 @@ class PagesController extends Controller
         return redirect()->back()->with('thongbao','Đặt Hàng Thành Công');
         
     }
-   
->>>>>>> 9cd75fb5eb19eb805d7d5b9de740bffa24e0697a
+   public function getTim(Request $request) {
+       $sanpham = SanPham::where('tensp', 'like','%'. $request->key.'%')
+                        
+                        ->get();
+       return view('pages.timkiem', compact('sanpham'))
+       ;
+   }
+
 }

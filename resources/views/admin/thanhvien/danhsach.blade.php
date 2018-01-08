@@ -15,11 +15,11 @@
 				<thead>
 					<tr align="center">
 						<th>ID</th>
-						<th>Mã khách hàng</th>
-						<th>Tên thành viên</th>
+						<th>Tên</th>
 						<th>Tài khoản</th>
 						<th>Mật khẩu</th>
-						<th>Điểm tích lũy</th>
+						<th>Quyền</th>
+						
 						<th>Delete</th>
 						<th>Edit</th>
 					</tr>
@@ -28,11 +28,11 @@
 				@foreach($thanhvien as $tv)
 					<tr class="odd gradeX" align="center">
 						<td>{{$tv->id}}</td>
-						<td>{{$tv->makh}}</td>
-						<td>{{$tv->tentv}}</td>
-						<td>{{$tv->taikhoan}}</td>
-						<td>{{$tv->matkhau}}</td>
-						<td>{{$tv->diemtichluy}}</td>
+						<td>{{$tv->name}}</td>
+						<td>{{$tv->username}}</td>
+						<td>{{$tv->password}}</td>
+						<td>{{$tv->quyen}}</td>
+						
 						
 						<td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/thanhvien/xoa/{{$tv->id}}">Delete</a></td>
 						<td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/thanhvien/sua/{{$tv->id}}">Edit</a></td>

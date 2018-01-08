@@ -6,11 +6,19 @@ use Illuminate\Http\Request;
 use App\SanPham;
 use App\DanhMuc;
 use App\NhaCungCap;
+use Illuminate\Support\Facades\DB;
 
 class SanPhamController extends Controller
 {
     public function getDanhSach(){
-        $sanpham = SanPham::all();
+        $sanpham = DB::table('sanpham')
+        ->join('nhomsp as nsp','sanpham.manhomsp','=','nsp.id')
+        ->join('nhacungcap as ncc','sanpham.mancc','=','ncc.id')
+        ->select('sanpham.*',
+            'nsp.tennhom as tennhom',
+            'ncc.tenncc as tenncc'
+            )
+            ->get();
         return view('admin.sanpham.danhsach',['sanpham'=>$sanpham]);
     }
     public function getThem(){

@@ -38,8 +38,8 @@
 						</p>
 						<hr/>
 						<p class="buttons center">				
-							<a href="sanpham/1" class="btn" type="button">Continue</a>
-							<a href="thanhtoan" class="btn btn-inverse" type="submit" id="checkout">Checkout</a>
+							<a href="sanpham/1" class="btn" type="button">Mua Tiếp</a>
+							<a href="thanhtoan" class="btn btn-inverse" type="submit" id="checkout">Thanh Toán</a>
 						</p>					
 					</div>
 				</div>

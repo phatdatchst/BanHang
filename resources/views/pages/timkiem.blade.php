@@ -11,7 +11,7 @@
 						<ul class="thumbnails listing-products">
 							<li class="span3">
 							
-							@foreach($nhomsp as $nsp)
+							@foreach($sanpham as $nsp)
 								<div class="product-box">
 									<span class="sale_tag"></span>												
 									<a href="{{route('chitietsanpham', $nsp->id)}}"><img alt="" src="themes/images/cloth/{{$nsp->hinhanh}}"></a><br/>
@@ -41,4 +41,4 @@
 
 @section('script')
 	<script src="themes/js/common.js"></script>	
-@endsection
+@endsection	

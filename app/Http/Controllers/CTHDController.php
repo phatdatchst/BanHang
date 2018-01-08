@@ -5,11 +5,18 @@ use App\CTHD;
 use Illuminate\Http\Request;
 use App\HoaDon;
 use App\SanPham;
-
+use Illuminate\Support\Facades\DB;
 class CTHDController extends Controller
 {
     public function getDanhSach(){
-         $cthd = CTHD::all();
+         $cthd = DB::table('cthd')
+        ->join('hoadon as hd','cthd.mahd','=','hd.id')
+        ->join('sanpham as sp','cthd.masp','=','sp.id')
+        ->select('cthd.*',
+            'hd.id as id',
+            'sp.tensp as tensp'
+            )
+            ->get();
         return view('admin.cthd.danhsach',['cthd' => $cthd]);
     }
     public function getThem(){

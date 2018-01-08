@@ -19,11 +19,11 @@
 				<thead>
 					<tr align="center">
 						<th>ID</th>
-						<th>Mã Khách Hàng</th>
-						<th>Mã Nhân Viên</th>
+						<th>Tên Khách Hàng</th>
+						<th>Tên Nhân Viên</th>
 						<th>Thành Tiền</th>
 						<th>Ngày Lập</th>
-						<th>Trạng Thái</th>
+						<th>Hình Thức Thanh Toán</th>
 						<th>Ghi Chú</th>
 						<th>Delete</th>
 						<th>Edit</th>
@@ -33,11 +33,11 @@
 					@foreach($hoadon as $hd)
 					<tr class="odd gradeX" align="center">
 						<td>{{$hd->id}}</td>
-						<td>{{$hd->makh}}</td>
-						<td>{{$hd->manv}}</td>
+						<td>{{$hd->tenkh}}</td>
+						<td>{{$hd->tennv}}</td>
 						<td>{{$hd->thanhtien}}</td>
 						<td>{{$hd->ngaylap}}</td>
-						<td>{{$hd->trangthai}}</td>
+						<td>{{$hd->hinhthucthanhtoan}}</td>
 						<td>{{$hd->ghichu}}</td>
 						<td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/hoadon/xoa/{{$hd->id}}">Delete</a></td>
 						<td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/hoadon/sua/{{$hd->id}}">Edit</a></td>

@@ -15,46 +15,21 @@
 							<h5>ADDITIONAL INFORMATION</h5>
 							<p><strong>Phone:</strong>&nbsp;(123) 456-7890<br>
 							<strong>Fax:</strong>&nbsp;+04 (123) 456-7890<br>
-							<strong>Email:</strong>&nbsp;<a href="#">vietcuong_it@yahoo.com</a>								
+							<strong>Email:</strong>&nbsp;<a href="#">shopper@gmail.com</a>								
 							</p>
 							<br/>
 							<h5>SECONDARY OFFICE IN VIETNAM</h5>
 							<p><strong>Phone:</strong>&nbsp;(113) 023-1125<br>
 							<strong>Fax:</strong>&nbsp;+04 (113) 023-1145<br>
-							<strong>Email:</strong>&nbsp;<a href="#">vietcuong_it@yahoo.com</a>					
+							<strong>Email:</strong>&nbsp;<a href="#">shopper@gmail.com</a>					
 							</p>
 						</div>
 					</div>
 					<div class="span7">
-						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-						<form method="post" action="#">
-							<fieldset>
-								<div class="clearfix">
-									<label for="name"><span>Name:</span></label>
-									<div class="input">
-										<input tabindex="1" size="18" id="name" name="name" type="text" value="" class="input-xlarge" placeholder="Name">
-									</div>
-								</div>
-								
-								<div class="clearfix">
-									<label for="email"><span>Email:</span></label>
-									<div class="input">
-										<input tabindex="2" size="25" id="email" name="email" type="text" value="" class="input-xlarge" placeholder="Email Address">
-									</div>
-								</div>
-								
-								<div class="clearfix">
-									<label for="message"><span>Message:</span></label>
-									<div class="input">
-										<textarea tabindex="3" class="input-xlarge" id="message" name="body" rows="7" placeholder="Message"></textarea>
-									</div>
-								</div>
-								
-								<div class="actions">
-									<button tabindex="3" type="submit" class="btn btn-inverse">Send message</button>
-								</div>
-							</fieldset>
-						</form>
+						<p>Với nguồn hàng bất tận được nhập khẩu trực tiếp từ hệ thống nhà sản xuất có chất lượng nhất Quảng Châu, chúng tôi rất hân hạnh mang đến cho khách hàng thân yêu những sản phẩm vô cùng đa dạng về kiểu dáng, phù hợp với xu hướng thời trang đang thịnh hành và quan trọng nhất là chất lượng được kiểm duyệt đầy đủ các quy trình bắt buộc trước khi cho xuất xưởng.
+
+          Quý khách hàng có thể hoàn toàn yên tâm khi lựa chọn sản phẩm của chúng tôi cùng đồng hành trong cuộc sống hàng ngày và trong việc tìm kiếm nguồn nguồn thu nhập khác cho bản thân bằng chính sách bán sỉ và lẻ từ hệ thống bán hàng chuyên nghiệp và linh hoạt của chúng tôi.</p>
+						
 					</div>				
 				</div>
 			</section>			

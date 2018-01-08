@@ -6,11 +6,19 @@ use Illuminate\Http\Request;
 use App\HoaDon;
 use App\KhachHang;
 use App\NhanVien;
+use Illuminate\Support\Facades\DB;
 class HoaDonController extends Controller
 {
     public function getDanhSach(){
-        $hoadon = HoaDon::all();
-        return view('admin.hoadon.danhsach',['hoadon' => $hoadon]);
+        $hoadon = DB::table('hoadon')
+        ->join('khachhang as kh','hoadon.makh','=','kh.id')
+        ->join('nhanvien as nv','hoadon.manv','=','nv.id')
+        ->select('hoadon.*',
+            'kh.tenkh as tenkh',
+            'nv.tennv as tennv'
+            )
+            ->get();
+        return view('admin.hoadon.danhsach',['hoadon'=> $hoadon]);
     }
     public function getThem(){
         $khachhang = KhachHang::all();

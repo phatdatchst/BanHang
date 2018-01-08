@@ -17,6 +17,7 @@
 		<!-- global styles -->
 		<link href="themes/css/flexslider.css" rel="stylesheet"/>
 		<link href="themes/css/main.css" rel="stylesheet"/>
+		<link href="themes/css/style.css" rel="stylesheet"/>
 		
 		<link href="font/css/font-awesome.min.css" rel="stylesheet"/>
 		<!-- scripts -->

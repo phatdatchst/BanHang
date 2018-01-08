@@ -27,8 +27,8 @@
 						<th>Hình Ảnh</th>
 						<th>Trạng Thái</th>
 						<th>Ngày Nhập</th>
-						<th>Mã Nhóm Sản Phẩm</th>
-						<th>Mã Nhà Cung Cấp</th>
+						<th>Nhóm Sản Phẩm</th>
+						<th>Nhà Cung Cấp</th>
 						<th>Delete</th>
 						<th>Edit</th>
 					</tr>
@@ -44,12 +44,12 @@
 						<td>{{$sp->soluong}}</td>
 						<td>
 						  <p>{{$sp->hinhanh}}</p>
-						  <img width="100px" alt="" src="uploads/sanpham/{{$sp->hinhanh}}"/>
+						  <img width="100px" alt="" src="themes/images/cloth/{{$sp->hinhanh}}"/>
 						</td>
 						<td>{{$sp->trangthai}}</td>
 						<td>{{$sp->ngaynhap}}</td>
-						<td>{{$sp->manhomsp}}</td>
-						<td>{{$sp->mancc}}</td>		
+						<td>{{$sp->tennhom}}</td>
+						<td>{{$sp->tenncc}}</td>		
 						<td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/sanpham/xoa/{{$sp->id}}">Delete</a></td>
 						<td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/sanpham/sua/{{$sp->id}}">Edit</a></td>
 					</tr>
